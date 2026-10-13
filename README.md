@@ -251,10 +251,11 @@ Entries were found through the official [directory](https://apertus-ai.org/pages
 
 ## Hack Apertus projects
 
-Selected community projects from [Hack Apertus](https://hackapertus.ch/), reviewed on **October 9, 2026** during the ongoing online hackathon. These are experimental prototypes and research tools, not official Apertus releases. Selection requires an explicit code licence, project-specific documentation, a concrete Apertus use, and substantive implementation. See the [review notes](RESEARCH.md#hack-apertus-review--october-9-2026) for decisions and limitations; software and reported results were not independently tested.
+Selected community projects from [Hack Apertus](https://hackapertus.ch/), reviewed on **October 9 and 13, 2026** during the ongoing online hackathon. These are experimental prototypes and research tools, not official Apertus releases. Selection requires an explicit code licence, project-specific documentation, a concrete Apertus use, and substantive implementation. See the [review notes](RESEARCH.md#hack-apertus-review--october-9-2026) for decisions and limitations; software and reported results were not independently tested.
 
 ### Red-teaming and evaluation
 
+- [Apertus-Recht](https://github.com/mi11ione/apertus-recht) — German, French and Italian minimal-pair evaluation of Art. 261bis StGB, with code-computed labels, recorded Apertus responses and a reusable scoring harness. Apache-2.0.
 - [Swiss Statute QA](https://github.com/bisale24-ops/swiss-statute-qa) — Multilingual Swiss federal-law evaluation dataset with cited statutory answers, historical statute versions and recorded Apertus 1.5 responses. Apache-2.0 code; dataset CDLA-Permissive-2.0.
 - [Apertus StressLab](https://github.com/Alextsvr/apertus-stresslab) — False-premise acceptance experiments on Apertus 1.5 with preregistered evaluation, raw responses and provenance checks; small synthetic studies with quantization caveats. Apache-2.0.
 - [AirPatch](https://github.com/AhaWissenschaft/airpatch) — Evaluates Apertus code proposals in offline containers against hidden programming tests, with recorded responses, replay tooling and negative results. Apache-2.0.
@@ -264,6 +265,13 @@ Selected community projects from [Hack Apertus](https://hackapertus.ch/), review
 
 ### Document understanding and grounded answers
 
+- [Gegenprobe](https://github.com/mi11ione/gegenprobe) — Swiss parliamentary-data census, repair plans and schema conversion, with optional Apertus review of difficult layouts and replayable evaluation artifacts. Apache-2.0.
+- [Gleichlaut](https://github.com/mi11ione/gleichlaut) — Audits multilingual drug-reimbursement conditions and uses Apertus to draft French/Italian amendments while deterministic code preserves numeric values; drafts require review. Apache-2.0.
+- [Riserbo](https://github.com/AliceMessi/riserbo) — Reversible Swiss/Italian personal-data redaction with rules and local Apertus 1.5 detection, including indirect identifiers; synthetic evaluation reports residual leaks. Apache-2.0.
+- [kanhe](https://github.com/hoongyu/kanhe) — Multilingual voting-booklet claim classification with Apertus 1.5, BM25 retrieval, checked quotations and cached evaluation responses. Apache-2.0.
+- [PolyJudge](https://github.com/hasanssr/polyjudge-swissgov-rsd/tree/main/track_2a) — Cross-language semantic-difference detection in Swiss government pages, combining sentence alignment with Apertus verification and offline replay. Apache-2.0.
+- [Tse-min](https://github.com/YinZhengxun/hack-apertus-tsemin/tree/main/track_2a) — Word-level semantic-difference scoring combining Apertus judgments and token surprisal; requires an endpoint supporting prompt log probabilities. Apache-2.0.
+- [CiteOps](https://github.com/sidsri14/citeops) — Apertus incident-brief generation from bounded, redacted log bundles, with checks rejecting invented event IDs and uncited hypotheses or actions. Apache-2.0.
 - [Fedlex Answer](https://github.com/bisale24-ops/fedlex-answer) — Swiss federal-law Q&A using local statutory retrieval, Apertus 1.5 generation and deterministic quotation/number checks in German, French and Italian. Apache-2.0.
 - [Apertus Evidence Lab](https://github.com/hallzyx/apertus) — Multilingual voting-booklet claim classification with hybrid retrieval and a trained decision head over frozen Apertus 1.5; requires its specialized model backend. Apache-2.0.
 - [Schild](https://github.com/ShenJun93/hack-apertus-schild/tree/main/track_2b) — Swiss personal-data redaction gateway combining deterministic identifier rules with Apertus 1.5 entity detection and reversible placeholders. Apache-2.0.
@@ -280,6 +288,10 @@ Selected community projects from [Hack Apertus](https://hackapertus.ch/), review
 
 ### Applications, workflow controls and adaptation
 
+- [HausPost](https://github.com/blucca/hauspost) — Multilingual tenant-update processing with Apertus, source-linked repair briefs, follow-up drafts and coordinator review. Apache-2.0.
+- [Beneficia](https://github.com/Chinorab/beneficia/tree/main/track_2b) — Local beneficial-owner declaration drafting with Apertus extraction, line citations, deterministic ownership calculations and human-review queues. Apache-2.0.
+- [Mandate Desk](https://github.com/gracelee087/hack-apertus/tree/main/track_2b) — Apertus invoice processing bounded by client mandates, deterministic payment checks, approval queues and signed audit records. Apache-2.0.
+- [OriginPass CH–CN](https://github.com/sora200419/Hack-Apertus) — Swiss–China rules-of-origin decision-support prototype with Apertus classification and dossier drafting, deterministic rule traces and replay mode. Apache-2.0.
 - [Alpenstroke](https://github.com/nikitojik/Alpenstroke) — Multilingual swimming-workout logging and planning with Apertus, deterministic training-load calculations and user-confirmed parsed workouts. Apache-2.0.
 - [Zusage](https://github.com/shi1720/zusage) — Apertus 1.5 8B interview coach for Swiss apprenticeships, with a web interface and documented offline-demo and real-inference modes. Apache-2.0.
 - [GemeindeSim](https://github.com/hatif03/gemeindesim) — Apertus 1.5 generative-agent town exploring responses to municipal policies and budgets; an exploratory simulation, not a validated policy forecast. Apache-2.0.

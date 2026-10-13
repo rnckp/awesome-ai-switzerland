@@ -103,3 +103,30 @@ At the maintainer's request, added these eight projects to the existing hackatho
 Software was not installed or executed and model inference was not called. Reported benchmark results, safety, privacy and deployment claims remain author-reported. The overall ecosystem research date is unchanged.
 
 Verification: the existing link checker found all **8/8 new destinations reachable**, with no likely broken or inconclusive results. The source-count helper reports **29 Hack Apertus resource-bullet entries** and **139 overall**. README contents anchors, local file links, the section count and `git diff --check` passed. Earlier 21-entry/131-overall totals above describe the initial review, not the final list.
+
+### Hack Apertus follow-up — October 13, 2026
+
+Repeated GitHub discovery using Hack Apertus README mentions, `hackapertus` in repository names/descriptions/READMEs, and Apertus repositories created from October 9 onward. Compared candidates against the existing directory and rechecked selected deferred projects. Publication dates and discovery dates differ: PolyJudge, for example, was created before October 9 but newly discovered during this pass.
+
+Added 12 candidates at the maintainer's request. Public GitHub metadata, file inventories, root/track READMEs, licence texts and selected implementation files support their inclusion. All have Apache-2.0 code licences; documentation, datasets, model weights and imported materials retain their own terms. Reported results were not independently reproduced and software was not installed or executed.
+
+| Project | Evidence and limits |
+| ------- | ------------------- |
+| [Gegenprobe](https://github.com/mi11ione/gegenprobe) | Census, repair tooling, converter and Apertus client with replay/evidence artifacts. Rules run by default; model-assisted review is opt-in and still a feasibility study. |
+| [Gleichlaut](https://github.com/mi11ione/gleichlaut) | Multilingual reimbursement-text audit and guarded Apertus drafting, with recorded evaluation artifacts. Medical, legal and financial implications of its reported findings were not independently verified; descriptions avoid repeating those claims. |
+| [Apertus-Recht](https://github.com/mi11ione/apertus-recht) | Minimal-twin evaluation dataset, code-computed labels and scoring harness. Its legal labels and model-performance claims are authored research, not independently validated legal conclusions. |
+| [HausPost](https://github.com/blucca/hauspost) | Tenant-thread extraction, source highlighting, coordinator review and local-model smoke/evaluation records. Small synthetic cases; no mailbox integration or automatic dispatch is established. |
+| [Riserbo](https://github.com/AliceMessi/riserbo) | Rules, Apertus client, reversible placeholders and synthetic evaluation. Reported residual leaks contradict a blanket assurance that no personal data can leave through redacted output; included as a prototype with this limitation. |
+| [kanhe](https://github.com/hoongyu/kanhe) | Voting-booklet NLI implementation, retrieval, quotation checks and cached model outputs. Default reproduction replays responses; fresh predictions require inference. Quote membership does not prove semantic correctness. |
+| [PolyJudge](https://github.com/hasanssr/polyjudge-swissgov-rsd/tree/main/track_2a) | Substantive track README, Apertus client, method comparisons and replay cache. Root retains template material. Offline reproduction is distinct from real-model inference. |
+| [Tse-min](https://github.com/YinZhengxun/hack-apertus-tsemin/tree/main/track_2a) | Track README and implemented Apertus client for generative judgments and token-surprisal scoring. Specialized prompt-log-probability capability is required; generic chat compatibility is insufficient. |
+| [Beneficia](https://github.com/Chinorab/beneficia/tree/main/track_2b) | Document extraction client, cited facts, ownership calculations and review workflow. Inclusion does not validate the project's legal assumptions, declaration correctness or deployment isolation. |
+| [Mandate Desk](https://github.com/gracelee087/hack-apertus/tree/main/track_2b) | Invoice extraction/review client and mandate-bounded workflow with signatures and audit records. Payment controls and security properties were not independently tested; no live bank execution was exercised. |
+| [OriginPass CH–CN](https://github.com/sora200419/Hack-Apertus) | Classification/drafting client, deterministic origin engine and replay cache. Decision-support prototype; tariff and treaty claims were not independently verified. |
+| [CiteOps](https://github.com/sidsri14/citeops) | Implemented log-validation, redaction, model adapter, interface and synthetic cases. Event-ID membership checks validate references, not causal interpretation. Fixture preview is explicitly separate from Apertus inference. |
+
+Deferred projects: Rütli's report still describes stub-based evaluation and an unfinished real-model runtime; openparl-extract still imports a missing real Apertus client. ParlPDFeCH has materially improved to a runnable three-sample converter, but head weights and final gate validation remain absent/open; retain it as a follow-up candidate. CLAUSESHIFT explicitly reports no real-model results. Fine Print Ledger is a rules-page snapshotting project without demonstrated Apertus integration and was excluded. Templates and candidates without clear code licensing were not added.
+
+This targeted update advances only the hackathon section's review date; the overall ecosystem research date remains unchanged.
+
+Verification: all **12/12 new project links** were reachable through the existing link helper, with no likely broken or inconclusive results. The directory now contains **41 Hack Apertus resource-bullet entries** and **151 overall**. Section counts, README contents anchors, local file links and `git diff --check` passed. Previous counts describe their dated review snapshots.
