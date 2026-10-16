@@ -251,10 +251,14 @@ Entries were found through the official [directory](https://apertus-ai.org/pages
 
 ## Hack Apertus projects
 
-Selected community projects from [Hack Apertus](https://hackapertus.ch/), reviewed on **October 9 and 13, 2026** during the ongoing online hackathon. These are experimental prototypes and research tools, not official Apertus releases. Selection requires an explicit code licence, project-specific documentation, a concrete Apertus use, and substantive implementation. See the [review notes](RESEARCH.md#hack-apertus-review--october-9-2026) for decisions and limitations; software and reported results were not independently tested.
+Selected community projects from [Hack Apertus](https://hackapertus.ch/), reviewed on **October 9, 13 and 16, 2026**, covering the online hackathon and emerging on-site projects. These are experimental prototypes and research tools, not official Apertus releases. Selection requires an explicit code licence, project-specific documentation, a concrete Apertus use, and substantive implementation. See the [review notes](RESEARCH.md#hack-apertus-review--october-9-2026) for decisions and limitations; software and reported results were not independently tested.
 
 ### Red-teaming and evaluation
 
+- [Scrutineer](https://github.com/winsznx/scrutineer/tree/main/track_1b) — Multilingual Swiss federal-vote outcome benchmark with recorded Apertus responses, reproducible scoring and explicit reporting of a failed initial hypothesis. Apache-2.0.
+- [EpiTrace](https://github.com/wanshuzhang-story/epitrace-apertus) — Tests whether Apertus treats repeated claims as independent evidence, with synthetic dossiers, recorded 8B/70B responses and offline scoring. Apache-2.0.
+- [Swiss HVET Eval](https://github.com/wortgefecht/apertus-swiss-hvet-eval) — Swiss vocational-education factuality benchmark for Apertus 1.5 8B, with cited reference answers and human validation alongside automated judging. Apache-2.0.
+- [Swiss Heritage Factuality](https://github.com/ChristoYusj/apertus-swiss-landmarks) — Four-language Swiss landmark benchmark with photo, text-only and trap questions, recorded responses and deterministic regrading. Apache-2.0.
 - [Apertus-Recht](https://github.com/mi11ione/apertus-recht) — German, French and Italian minimal-pair evaluation of Art. 261bis StGB, with code-computed labels, recorded Apertus responses and a reusable scoring harness. Apache-2.0.
 - [Swiss Statute QA](https://github.com/bisale24-ops/swiss-statute-qa) — Multilingual Swiss federal-law evaluation dataset with cited statutory answers, historical statute versions and recorded Apertus 1.5 responses. Apache-2.0 code; dataset CDLA-Permissive-2.0.
 - [Apertus StressLab](https://github.com/Alextsvr/apertus-stresslab) — False-premise acceptance experiments on Apertus 1.5 with preregistered evaluation, raw responses and provenance checks; small synthetic studies with quantization caveats. Apache-2.0.
@@ -265,6 +269,10 @@ Selected community projects from [Hack Apertus](https://hackapertus.ch/), review
 
 ### Document understanding and grounded answers
 
+- [ClearConsent](https://github.com/sese0318/clearconsent) — Apertus research consent-form explanations with source-quotation and number checks, missing-information questions and teach-back quizzes. Apache-2.0.
+- [Leicht·Facile](https://github.com/bobrovsky420/leicht-facile) — Easy-language drafting for Swiss official texts with Apertus, sentence provenance, deterministic fact checks and human review. Apache-2.0.
+- [Papertus](https://github.com/igorjovicic/papertus) — Swiss document assistant combining Apertus extraction with QR decoding, checksum and arithmetic checks, cited reports and document Q&A. Apache-2.0.
+- [Querschnitt](https://github.com/mi11ione/querschnitt) — Apertus topic classification for OpenParlData affairs using configurable taxonomies, review lanes and quoted evidence; targets the October 18–19, 2026 Liebefeld hackathon. Apache-2.0.
 - [Gegenprobe](https://github.com/mi11ione/gegenprobe) — Swiss parliamentary-data census, repair plans and schema conversion, with optional Apertus review of difficult layouts and replayable evaluation artifacts. Apache-2.0.
 - [Gleichlaut](https://github.com/mi11ione/gleichlaut) — Audits multilingual drug-reimbursement conditions and uses Apertus to draft French/Italian amendments while deterministic code preserves numeric values; drafts require review. Apache-2.0.
 - [Riserbo](https://github.com/AliceMessi/riserbo) — Reversible Swiss/Italian personal-data redaction with rules and local Apertus 1.5 detection, including indirect identifiers; synthetic evaluation reports residual leaks. Apache-2.0.
@@ -288,6 +296,9 @@ Selected community projects from [Hack Apertus](https://hackapertus.ch/), review
 
 ### Applications, workflow controls and adaptation
 
+- [See It, Say It, Pick It — Asian Prompters](https://github.com/azamafridi23/see-it-say-it-pick-it-hack-apertus) — Robotics challenge submission combining object segmentation, scene graphs and Apertus planning/safety agents to produce pick-and-place plans, clarification questions or refusals. Apache-2.0.
+- [Sovereign Market Brief](https://github.com/simonlin1212/sovereign-market-brief) — Multilingual Apertus market commentary from code-computed facts, with deterministic checks and retained blocked drafts; supports local inference. Apache-2.0.
+- [Apertus Draft Gate](https://github.com/ratchetcode/hermes-apertus-email/tree/main/track_2b) — Hermes-based email/newsletter drafting framework configured for Apertus, with minimised fictional contact context and local review/export commands; implements no mail sender. Apache-2.0.
 - [HausPost](https://github.com/blucca/hauspost) — Multilingual tenant-update processing with Apertus, source-linked repair briefs, follow-up drafts and coordinator review. Apache-2.0.
 - [Beneficia](https://github.com/Chinorab/beneficia/tree/main/track_2b) — Local beneficial-owner declaration drafting with Apertus extraction, line citations, deterministic ownership calculations and human-review queues. Apache-2.0.
 - [Mandate Desk](https://github.com/gracelee087/hack-apertus/tree/main/track_2b) — Apertus invoice processing bounded by client mandates, deterministic payment checks, approval queues and signed audit records. Apache-2.0.
