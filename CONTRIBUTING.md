@@ -20,4 +20,6 @@ Ask the agent to read and follow [the maintenance skill](https://github.com/rnck
 
 In the repository's **Settings → Pages → Build and deployment**, select **GitHub Actions** as the source. The Pages workflow builds on pushes to `main` and can also be run manually from Actions.
 
-`README.md` is rendered as the homepage by `_config.yml`; supporting Markdown links are converted to their HTML destinations. Edit the Markdown sources, not generated files. If the repository or Pages path changes, update `_config.yml` and the workflow's output checks together. Agent instructions and Python scaffolding are excluded from the published site.
+`_config.yml` configures `README.md` as the homepage and relative Markdown links for conversion to HTML destinations. Edit the Markdown sources, not generated files. The Pages workflow (`.github/workflows/pages.yml`) checks the generated homepage, research notes, contribution guidelines, licence, one homepage anchor and selected tooling exclusions before deployment; it does not audit all links. If the repository or Pages path changes, review the config and workflow checks together. Agent instructions, Python helpers, tests and default maintenance reports are excluded from the site.
+
+For helper setup, report commands and offline checks, use the [maintenance helper documentation](https://github.com/rnckp/awesome-apertus/blob/main/src/README.md).

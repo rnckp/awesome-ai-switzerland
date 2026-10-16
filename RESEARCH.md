@@ -1,6 +1,6 @@
 # Research notes
 
-Research date: **September 26, 2026**.
+Full ecosystem review: **September 26, 2026**. Targeted Hack Apertus reviews through **October 16, 2026** are recorded below.
 
 ## Scope and method
 
@@ -9,6 +9,8 @@ Research combined web searches, the official website and its outbound links, bot
 Official model families are listed individually; the Mini collection covers all official MLX quantization combinations. Live GitHub and Hugging Face indexes provide discovery paths for new artifacts. Unrelated Swiss AI projects, generic forks without a clear Apertus use, duplicate mirrors, and similarly named cinema, VR, and commercial products were excluded. Community coverage is selective, not a claim to enumerate every repository or fine-tune on the internet.
 
 Descriptions rely on primary sources. Inclusion confirms a documented connection to Apertus, not an independent quality, security, privacy, or performance endorsement. Software was not installed, model weights were not downloaded, and paid services were not exercised.
+
+These are dated review records. Raw HTTP reports and external source snapshots are not committed, so historical reachability totals and external implementation claims cannot be independently reconstructed from this repository alone. Consult the linked primary sources for current status.
 
 ## Main source trail
 
@@ -26,6 +28,8 @@ Descriptions rely on primary sources. Inclusion confirms a documented connection
 
 ## Important distinctions
 
+The release and runtime observations below reflect the full ecosystem review date.
+
 - Authored 1.5 model cards prescribe custom runtime revisions. Hugging Face's generic generated “Use this model” snippets are insufficient evidence of upstream compatibility.
 - Apertus 1.5 accepts multimodal input and produces text. Experimental audio input is not audio generation; text-only conversions omit the multimodal interface.
 - Thinking-mode and tool-call compatibility depend on the exact model and serving build.
@@ -37,7 +41,7 @@ Descriptions rely on primary sources. Inclusion confirms a documented connection
 
 ## Maintenance
 
-Review release pages and model cards first, then refresh providers, runtime support, community artifacts, and link status. Update the README's research date only after substantive review. Follow [the contribution guidelines](CONTRIBUTING.md).
+Review release pages and model cards first, then refresh providers, runtime support, community artifacts, and link status. Advance the README's full ecosystem review date only after a substantive ecosystem review; record targeted review dates separately. Follow [the contribution guidelines](CONTRIBUTING.md). Commands and checker limitations are documented in the [maintenance helper documentation](https://github.com/rnckp/awesome-apertus/blob/main/src/README.md).
 
 ### Full review — September 26, 2026
 
@@ -87,7 +91,7 @@ Verification: the existing link helper checked the new README section's 22 disti
 
 Follow-up GitHub discovery searched `"Hack Apertus"`, `"Hack Apertus" in:readme`, `hackapertus in:name,description,readme`, and Apertus repositories created from October 1, 2026 onward. Results were compared with the original 25 candidates. This is selective discovery, not a complete submission catalog: indexing can omit repositories, and some results are templates, challenge materials, duplicates or unrelated projects.
 
-At the maintainer's request, added these eight projects to the existing hackathon section after reading project documentation, file inventories, licence texts and selected implementation files. All eight bundle the Apache-2.0 code licence; Folio's full text follows its initial notice, correcting the earlier chat assessment that it only referenced the licence.
+At the maintainer's request, added these eight projects to the existing hackathon section after reading project documentation, file inventories, licence texts and selected implementation files. All eight bundle the Apache-2.0 code licence; Folio's full text follows its initial notice.
 
 | Repository | Contribution and review limits |
 | ---------- | ----------------------------- |

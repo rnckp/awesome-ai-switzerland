@@ -40,7 +40,7 @@ Verify present-day status rather than carrying forward assumptions from earlier 
 
 ## Maintenance scripts
 
-Run from the repository root with Python 3.13+ and `uv`. Use the committed lockfile; a content update does not require dependency upgrades.
+Run from the repository root with `uv`. The package supports Python 3.13+; `.python-version` selects Python 3.14 by default. Use the committed lockfile; a content update does not require dependency upgrades.
 
 ```sh
 make install       # uv sync --locked; set up dependencies when needed
@@ -75,7 +75,7 @@ The default reports are ignored by Git and excluded from Pages. Summarize releva
 3. Use the link helper for new or changed URLs and inspect destination contents in primary sources. A successful HTTP response alone does not establish relevance. For a full refresh, run it on the entire README and audit supporting documents as appropriate; state exactly which files were checked.
 4. Distinguish dead links from rate limits, authentication, and bot protection. Retry transient errors sparingly; use a primary-source cross-check for blocked pages and record unresolved cases. Do not delete an entry solely because it returned 403 or 429.
 5. Validate local file links, contents anchors, table structure, and `git diff --check`. Review counts from the resource helper for unexpected changes, while checking tables separately. Recalculate verification totals when recording a new full check; keep resource-bullet counts distinct from unique URL counts and never reuse historical totals as current results.
-6. Advance the README's “Last researched” date and the overall research date only after a substantive refresh. For a narrow change, record its date and scope separately when useful. State what was actually tested; link checking does not mean software or services were exercised.
+6. Advance the README's “Last full ecosystem review” date and the overall research date only after a substantive ecosystem refresh. For a narrow change, record its date and scope separately, updating the targeted Hack Apertus review date when applicable. State what was actually tested; link checking does not mean software or services were exercised.
 
 ## GitHub Pages conventions
 

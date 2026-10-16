@@ -8,7 +8,7 @@
 
 A curated guide to [Apertus](https://www.apertus-ai.org/), the open multilingual model family from the [Swiss AI Initiative](https://www.swiss-ai.org/), developed by EPFL, ETH Zurich, and CSCS. Official models, reproducibility resources, tools, integrations, and community projects.
 
-**Last researched: September 26, 2026.** Independent community list; “official” denotes Apertus team or Swiss AI resources. See [research notes](RESEARCH.md) for scope and verification limits.
+**Last full ecosystem review: September 26, 2026; latest targeted Hack Apertus review: October 16, 2026.** Independent community list; “official” denotes Apertus team or Swiss AI resources. External-resource descriptions reflect their dated reviews, not continuous verification. See [research notes](RESEARCH.md) for scope and verification limits.
 
 <details>
 <summary><strong>Table of Contents</strong></summary>
@@ -68,7 +68,7 @@ Use each model card for capabilities, access conditions, and installation instru
 
 Supporting models: [pretraining toxicity classifier](https://huggingface.co/swiss-ai/apertus-pretrain-toxicity) and [WavTokenizer checkpoint](https://huggingface.co/swiss-ai/wavtokenizer-large-unify-40token).
 
-**Version matters:** the 1.5 cards currently require acceptance of access conditions and document custom Transformers/vLLM builds. They also state that tool calling is unsupported in thinking mode. Follow the authored [1.5 usage instructions](https://huggingface.co/swiss-ai/Apertus-v1.5-8B#how-to-use); a runtime supporting 1.0 does not automatically support 1.5.
+**Version matters:** at the full ecosystem review, the 1.5 cards required acceptance of access conditions and documented custom Transformers/vLLM builds. They also stated that tool calling was unsupported in thinking mode. Follow the authored [1.5 usage instructions](https://huggingface.co/swiss-ai/Apertus-v1.5-8B#how-to-use); a runtime supporting 1.0 does not automatically support 1.5.
 
 ## Official code and training infrastructure
 

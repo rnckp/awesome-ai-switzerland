@@ -5,7 +5,8 @@ package contains its maintenance scripts.
 
 ## Setup and commands
 
-Use Python 3.13+ and [uv](https://docs.astral.sh/uv/). Run these commands from the
+Use [uv](https://docs.astral.sh/uv/). The package supports Python 3.13+;
+`.python-version` selects Python 3.14 by default. Run these commands from the
 repository root:
 
 ```sh
@@ -19,18 +20,22 @@ make help          # List all targets
 ```
 
 - `awesome_apertus/count_sources.py` counts top-level resource bullets
-  with external links, grouped by Markdown heading. Secondary links, nested
+  with external Markdown links under level-two headings, grouped by section
+  and heading path. Secondary links, nested
   bullets, table rows and fenced examples do not add entries. The model table
   is therefore excluded from the counts. Separate cross-references
   count again; these are not counts of unique datasets or publishers.
 - `awesome_apertus/link_checker.py` checks unique HTTP(S) URLs using HEAD
   with a streamed GET fallback. It reports reachable, likely broken (404/410)
-  and inconclusive results. It does not validate fragments, content or licenses.
+  and `needs review` (inconclusive) results. It removes URL fragments before
+  checking and does not validate local links, content or licenses.
   The command exits with status 1 for likely broken links or a missing input;
   inconclusive checks alone do not cause failure.
 
-Both helpers default to `README.md` in the current working directory. Reports
-are written there too and are ignored by Git. Override the input or output with:
+Both helpers default to `README.md` in the current working directory, so the
+default reports cover only the main README. The default report paths at the
+repository root are ignored by Git and excluded from Pages. Override the input
+or output to check another document or write elsewhere:
 
 ```sh
 uv run --locked count-sources README.md --output /tmp/counts.md
@@ -40,3 +45,6 @@ make check-links ARGS='README.md --output /tmp/links.md'
 
 Use `--help` with either command for options. `make lint`, `make format-check`
 and `make test` also work separately. The tests make no network requests.
+`make check` validates the Python helpers; it does not check documentation links
+or build the website. The [Pages workflow](../.github/workflows/pages.yml)
+separately builds the site and checks selected output files and exclusions.
