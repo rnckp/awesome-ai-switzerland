@@ -1,6 +1,6 @@
 # Research notes
 
-Full ecosystem review: **September 26, 2026**. Targeted Hack Apertus reviews through **October 16, 2026** are recorded below.
+Full ecosystem review: **September 26, 2026**. Targeted Hack Apertus and new-resource reviews through **October 20, 2026** are recorded below.
 
 ## Scope and method
 
@@ -33,7 +33,7 @@ The release and runtime observations below reflect the full ecosystem review dat
 - Authored 1.5 model cards prescribe custom runtime revisions. Hugging Face's generic generated “Use this model” snippets are insufficient evidence of upstream compatibility.
 - Apertus 1.5 accepts multimodal input and produces text. Experimental audio input is not audio generation; text-only conversions omit the multimodal interface.
 - Thinking-mode and tool-call compatibility depend on the exact model and serving build.
-- The official research page still marks the 1.5 report as forthcoming. The linked 2025 report describes the original family.
+- The 2025 report describes the original family. The 1.5 report was forthcoming at the September review; it is now [published](https://arxiv.org/abs/2610.15542), verified in the October 20 follow-up below.
 - Open training resources include reconstruction scripts, source inventories, and filtering metadata. One unrestricted download containing the entire corpus is not implied.
 - Provider catalogs do not guarantee every feature or the model's maximum context length is exposed. Prices and availability were intentionally omitted.
 - Legal documentation is linked as published by the project, without independently certifying compliance.
@@ -244,3 +244,75 @@ No named online winners were found in the checked public organizer sources. The 
 This supplements the earlier October 16 review and supersedes its deferred status for ParlPDFeCH and CLAUSESHIFT. The September full ecosystem review date is unchanged.
 
 Verification: the existing link helper checked **74 newly introduced distinct destinations** across README and research notes: **74 reachable, no likely broken links and no inconclusive results**. This includes the 61 new project links and supporting/event sources; it is not a fresh full-directory crawl. The source counter reports **113 Hack Apertus resource-bullet entries** and **223 overall**. The 61 new README repositories match the 61 review-table rows; local links, contents anchors, explicit default-branch links, Markdown table structure and `git diff --check` passed. Reports were written under `/tmp` and are not committed.
+
+### Liebefeld and new-resource discovery — October 20, 2026
+
+A targeted follow-up after Liebefeld, plus a selective search for new ecosystem resources; this does not replace the September full review. GitHub searches for Apertus/Liebefeld and recently created or updated Hack Apertus repositories yielded 119 distinct repositories, 66 not linked in the previous README. Search results fit within each query’s 100-result limit. Checked their metadata, root documentation and trees, then selected licences, reports and implementation files. Also screened catalog metadata for all 138 public Swiss AI repositories and the two HackApertus organization repositories, and bounded Hugging Face searches (100 recently modified model matches, 100 dataset matches, 27 Spaces). These discovery counts are not accepted-submission totals or an exhaustive model inventory.
+
+#### Event and awards status
+
+The [organizer’s regional page](https://hackapertus.ch/regions/bern-liebefeld) and [Sprintd event/challenge page](https://app.sprintd.org/events/hack-apertus-liebefeld) identify the on-site event as October 18–19 and distinguish it from the October 1–16 online round. The published regional program places submission at 14:30 on October 19 and finals/judging that evening; no public source checked established a later submission extension. The three challenges cover Bern research/expertise matching, OpenParlData topic classification and archive exploration. The [OpenParlData challenge owner](https://www.glue.ch/en/2026/10/08/openparldata-hack-apertus-swiss-parliamentary-data/) independently distinguishes its online extraction and on-site classification challenges.
+
+No named Liebefeld or online winners were found in the checked organizer pages, public indexed announcements or targeted winner searches on October 20. This is an absence of public confirmation in those sources, not proof that the on-site jury has not decided. The [photo gallery](https://hackapertus.ch/gallery) links to event photographs, not a submission catalog. [Devpost’s gallery](https://hackapertus.devpost.com/project-gallery) remains unpublished in the accessible page, and its [rules](https://hackapertus.devpost.com/rules) still estimate the online winners announcement for October 23 at 12:00 CEST, subject to change. Private Discord/email and unindexed posts were not inspected. Public repositories do not establish accepted submissions, finalists or awards.
+
+#### Newly listed Liebefeld projects
+
+| Project | Repository evidence and limits |
+| --- | --- |
+| [CORA](https://github.com/Anakalypto/CORA-Apertus) | Apertus client, metadata pipeline, QA code and report; entity-linking, summarisation and anonymisation errors are disclosed. |
+| [Bern Life](https://github.com/CPD9/bern-life) | Implemented engine/model adapters and project-specific documentation; fully air-gapped setup is documented but not rehearsed end to end. |
+| [Bern Fit](https://github.com/Grozby/kinder-bueno) | Backend LLM adapter, research-matching workflow and docs/REPORT.md; quoted evidence does not establish business suitability. |
+| [RAGlette](https://github.com/Najahiri/mylife-with-tokens) | rag_model/llm.py, tools/apertus_chat.py and report; smaller-model tool use, stale index and latency limitations are documented. |
+| [B2Bern](https://github.com/Spaghetti-Overflow/hack-apertus-stregoni) | Bounded Apertus reasoning client and substantive on-site report; final corpus/quality, expert-recall and air-gap checks remain pending. The RenatoMignone copy is not a second entry. |
+| [mutz](https://github.com/beSaif/mutz) | Shared Apertus client, institutional crawling and matching application; contact matches and quotations are leads for review. |
+| [Bern Innovation Engine](https://github.com/davidbonaccorsi/hackapertusBern) | Scraping/database and API/model calls plus report; the README’s absolute hallucination/traceability assertions are not independently established. |
+| [Dreamers ParlTopics](https://github.com/edu008/Dreamers4OpenParl) | LLM client/prompts, classification implementation and report; chapter-level agreement is not APS topic accuracy, and DVS recall remains unreported. |
+| [Saarlanders Research & Expertise Navigator](https://github.com/ksjayasankar/liebefeld-saarlanders) | Dedicated Apertus client, retrieval/explanation workflow and report; 12 team-authored evaluation queries and model-confirmed explanations do not establish external validity. |
+| [aperTOPic](https://github.com/matthvalette/aperTOPic) | Project-specific README, src/topic_mapping/apertus_client.py and service deployment code; no independent multilingual quality or Swiss hosting assurance is inferred. |
+| [Parlamentsthemen](https://github.com/prakash-aryan/parlamentsthemen) | Report and API distinguish the dedicated decision backend from ordinary chat inference; released adapter/head artifacts are present. No APS-labelled gold corpus or Romansh test set. |
+| [Unisono](https://github.com/Dinesh18S/parltopics) | LLM client, CLI/API and report; team review is not independent, and title-only affairs are a documented weak case. |
+| [ParlTopic](https://github.com/Felipe3052/hackapertus-openparldata) | Dedicated model client and report; development validation was opened, Romansh is unevaluated and full-corpus runtime is projected. |
+| [ParlaRadar](https://github.com/sagnikdas-ml/Parliament_Classifier_Bern_Hackathon) | API, classifier/job implementation and report; the disclosed old benchmark underperforms a keyword baseline, and a valid quote does not prove a correct topic. |
+| [Stapfer evidence explorer](https://github.com/jean3P/bern-archives-apertus) | core/apertus.py, pinned model-serving scripts and project README; curated transcripts are preserved, and stored runs/fixtures are distinguished from fresh inference. |
+
+Code licences are Apache-2.0 except Bern Fit, mutz, ParlaRadar and Stapfer evidence explorer (MIT), and RAGlette (GPL-3.0). Licence grants were read; they do not relicense institutional source pages, archive datasets or third-party models. Quoted passages establish a source location, not correctness of an interpretation, topic label or expertise recommendation.
+
+#### Additional online projects
+
+| Project | Repository evidence and limits |
+| --- | --- |
+| [Inbrev](https://github.com/NWichter/Hack_Apertus_2B_Inbrev) | track_2b model client and substantive report; non-clinician/synthetic labels and lack of real practice-mail evaluation are explicit. |
+| [KMU-Compliance-Check](https://github.com/alexsuter16/kmu-compliance-check) | Implemented LLM/law/app workflow and report; no claim of legal certification, checkout coverage or reliable quantized-model performance. |
+| [REDRESS × Apertus](https://github.com/Mah-ux-dotcom/redress-ai) | HTTP model adapter/proxy, deterministic rules and report; synthetic evaluation and lexical support checks do not validate legal advice. |
+| [Ordner](https://github.com/Simlowker/ordner) | Transformers/MLX adapters, agent model client and report; default demonstrations and real local-model evaluation paths are distinguished. |
+| [TenderProof](https://github.com/Vishwa-docs/TenderProof) | Real model adapter, source-window/quote validation and technical report; no synthetic inference fallback. Missing factory/unit evidence prevents conformity conclusions. |
+| [Meditations RAG](https://github.com/YingzhiVA/meditations-Apertus-RAG) | track_2b Hugging Face adapter, retrieval pipeline and report; generated HyDE text is search input, not the quoted historical answer. The author’s other repository is not listed twice. |
+| [AI Fridge Chef](https://github.com/williamcheung/aifridgechef) | Vision, LLM and application implementation plus report; transcription is a draft and recipe suggestions are not validated dietary advice. |
+| [ApertusVote](https://github.com/CraigChiambiro/hackapertus-ost) | Project README, track_2a/src/nli.py and the substantive track_2a report; reported live Docker tests are functional checks, not benchmark accuracy. |
+| [Fact Attack](https://github.com/JJukic/Apertus-Team-Fact-Attack-2026) | Canonical team repository, real Apertus client, report and experiments. Felipe3052/Fact-Attack-Agent-2.0 is a duplicate, not a second listing; development scores are not independently reproduced. |
+| [OpenAlps](https://github.com/rohIta-k/OpenAlps) | Dedicated LLM client and report; proposal selection, retrieval depth and context mixing remain disclosed sources of errors. |
+| [Macagni/Kessler RSD adaptation](https://github.com/g1anci/hackapertus_submission_track_2_uzh_tk_gm_clean) | Read the training and evaluation notebooks as source, not executable results; report documents synthetic labels, length exclusions and non-sealed tuning. |
+| [Checked rescue briefings](https://github.com/prakash-aryan/rescue-briefings-apertus) | Implemented model client, rule checks, simulator and report; generated terrain, synthetic messages and assumed operating limits are not operational rescue procedures. |
+| [SwarmOps vision-language grounding](https://github.com/prakash-aryan/see-it-say-it-pick-it-apertus) | Model client, pipeline modes and report; public development scores do not establish hidden-test performance or physical robot safety. |
+
+These 13 additions have Apache-2.0 code grants; Fact Attack’s report separately identifies AGPL obligations for its PyMuPDF-based image. Documentation, datasets, auxiliary weights and source materials retain their own terms. Reported model runs and benchmark numbers were inspected as author evidence, not independently executed or reproduced.
+
+#### Broader ecosystem changes
+
+- **Apertus 1.5 reproducibility:** the [published report](https://arxiv.org/abs/2610.15542) and updated [official release article](https://apertus-ai.org/articles/2026-07-apertus-1-5/) now document intermediate checkpoints, training stages and released data. Added long-context base and intermediate SFT/RL/DPO checkpoints to the model table, and LongContextQA, verl/verl-recipe and self-distillation to training resources. The article’s RLVR links redirect to the model repositories named `-RL`; use those canonical destinations. The 70B DPO stage is already the final 70B model, while the final 8B adds charter alignment; no duplicate final checkpoint is listed. Public metadata/artifact listings and authored cards were checked; gated weights were not downloaded or access conditions accepted.
+- **Training mixtures:** added the 1.5 text SFT mixture, annotated preference pool and DPO pairs; replaced the older underscore preference-data destination with the currently linked hyphenated release. Added backtranslated Romansh SFT beside the existing Swiss-language corpora. Dataset access and licence conditions are separate from model licensing.
+- **ONWARD:** [degeneration-probe](https://github.com/swiss-ai/degeneration-probe) implements onset-labelled generation datasets, probe training/selection and false-alarm evaluation, including original Apertus 8B Instruct. The linked probe collection contains released artifacts. Apache-2.0 research code; detection is not established as reliable early warning.
+- **SFT Data Scorer:** the [maintainer’s repository](https://github.com/aebelge/sftdashboard), also forked by Swiss AI, contains concrete Apertus 1.5 dataset loaders and scoring adapters. The Apertus loader was identical in both repositories at review. Its default eight examples and scores are fixtures. MIT research tooling; local research-data paths are not promised public datasets.
+- **Greek Apertus:** corrected the old “tooling, not a finished model release” description. GlossAPI now publishes continued-pretraining weights and an instruction-tuned v0.5 preview, based on original Apertus 8B, not 1.5. Public authored model cards and artifact listings show Apache-2.0 weights with gated downloads; source-corpus terms remain separate.
+- **Apertus Decide:** inspected the public model card, saved encoder/configuration artifacts and Space’s shared scorer/API source. This Mini-derived encoder scores runtime-defined candidates; it does not generate explanations. Its confidence measures entropy concentration, not probability of correctness. Apache-2.0; internal test results do not establish new-task or per-language quality.
+- **Farmly:** added the source-available parcel-sharing project from Liebefeld Swiss AI Weeks **2025**, separately from the 2026 event. The original Apertus 70B request parser, Flutter client and route-matching backend are present. Its PolyForm Noncommercial licence restricts commercial reuse; external service setup is required. It is not an Apache-licensed Hack Apertus 2026 submission.
+
+#### Selection and remaining uncertainty
+
+Deferred [Bern Expertise Navigator final](https://github.com/prachi-kedar/bern-expertise-navigator-final): implemented Apertus path, but the report explicitly says all reported evaluations use the rules baseline and no Apertus evaluation has run. [BernMiner](https://github.com/Trista1208/bernminer_lifescience) has substantial nested documentation/code, but its focused crawler is explicitly deterministic, company matching can select non-Apertus providers, and the top-level technical report remains a template; no verified Apertus-specific result is inferred. The Coupur copy is not a separate project. [Forester](https://github.com/bennyfathurr/Forester-Tower-Defense) implements a game/model gateway, but its report says fresh live inference is unverified and the asset audit remains pending. [YT-APERTUS-RSD](https://github.com/tumatuma2/yt-uzh) says its framework has not been tested on SwissGov-RSD. These limits are not claims that the repositories contain no useful work.
+
+Also omitted template-only/scaffold submissions, projects without a clear code licence, duplicate copies and generic API wrappers without demonstrated Apertus use. The public Bern Life documentation references a red-team graph repository that returned 404; it was not added. The deprecated Swiss AI generation-issues repository directs users to model discussions rather than a new supported reporting workflow. Experimental Apertus-2-related infrastructure/specification files do not establish a released Apertus 2 model. Community format variants already covered by existing grouped entries were not individually enumerated.
+
+The previous full-review date is unchanged. No applications, containers or notebooks were run, and no model inference was performed; public source reads and HTTP checks are the verification boundary.
+
+Verification: the existing link helper checked **76 added or changed distinct HTTP(S) destinations** across README and these notes: **76 reachable, no likely broken links and no inconclusive results**. The final run includes the canonical dashboard maintainer link after replacing its fork. Local document links, heading anchors, Markdown tables, the 28 new hackathon entries against their 28 evidence rows, and `git diff --check` passed. The source counter reports **141 Hack Apertus resource-bullet entries** and **260 overall**, up by 28 and 37 respectively; model-table rows and secondary links do not add to these counts. This was a targeted link check, not a full-directory crawl; reports remain under `/tmp`.

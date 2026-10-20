@@ -8,7 +8,7 @@
 
 A curated guide to [Apertus](https://www.apertus-ai.org/), the open multilingual model family from the [Swiss AI Initiative](https://www.swiss-ai.org/), developed by EPFL, ETH Zurich, and CSCS. Official models, reproducibility resources, tools, integrations, and community projects.
 
-**Last full ecosystem review: September 26, 2026; latest targeted Hack Apertus review: October 16, 2026.** Independent community list; “official” denotes Apertus team or Swiss AI resources. External-resource descriptions reflect their dated reviews, not continuous verification. See [research notes](RESEARCH.md) for scope and verification limits.
+**Last full ecosystem review: September 26, 2026; latest targeted Hack Apertus and new-resource review: October 20, 2026.** Independent community list; “official” denotes Apertus team or Swiss AI resources. External-resource descriptions reflect their dated reviews, not continuous verification. See [research notes](RESEARCH.md) for scope and verification limits.
 
 <details>
 <summary><strong>Table of Contents</strong></summary>
@@ -36,7 +36,7 @@ A curated guide to [Apertus](https://www.apertus-ai.org/), the open multilingual
 - **Download models:** [Swiss AI on Hugging Face](https://huggingface.co/swiss-ai) and the [model guide below](#official-models).
 - **Run locally:** [Quickstart](https://apertus-ai.org/docs/quickstart/) and [local inference options](#local-inference-and-serving).
 - **Build an application:** [Hosted APIs](#hosted-apis-and-cloud-deployment), [integration examples](#applications-and-integrations), and [fine-tuning recipes](https://github.com/swiss-ai/apertus-finetuning-recipes).
-- **Study or reproduce:** [Technical report](https://arxiv.org/abs/2509.14233), [training code](https://github.com/swiss-ai/pretrain-code), and [data reconstruction](https://github.com/swiss-ai/pretrain-data).
+- **Study or reproduce:** [1.5 technical report](https://arxiv.org/abs/2610.15542), [training code](https://github.com/swiss-ai/pretrain-code), and [data reconstruction](https://github.com/swiss-ai/pretrain-data).
 
 ## Official sites and documentation
 
@@ -60,6 +60,8 @@ Use each model card for capabilities, access conditions, and installation instru
 | Family                   | Official weights                                                                                                                                                                                         | Purpose                                                                                               |
 | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Apertus 1.5**          | [8B](https://huggingface.co/swiss-ai/Apertus-v1.5-8B) · [70B](https://huggingface.co/swiss-ai/Apertus-v1.5-70B) · [collection](https://huggingface.co/collections/swiss-ai/apertus-v15)                  | Text and image input, experimental audio input, optional thinking; up to 262,144 tokens. Text output. |
+| **1.5 — long-context base** | [8B](https://huggingface.co/swiss-ai/Apertus-v1.5-8B-base) · [70B](https://huggingface.co/swiss-ai/Apertus-v1.5-70B-base) | Pretraining checkpoints for completion or further training; no chat template. |
+| **1.5 — intermediate post-training** | [8B SFT](https://huggingface.co/swiss-ai/Apertus-v1.5-8B-SFT) · [70B SFT](https://huggingface.co/swiss-ai/Apertus-v1.5-70B-SFT) · [8B RL](https://huggingface.co/swiss-ai/Apertus-v1.5-8B-RL) · [70B RL](https://huggingface.co/swiss-ai/Apertus-v1.5-70B-RL) · [8B DPO](https://huggingface.co/swiss-ai/Apertus-v1.5-8B-DPO) | Training-stage checkpoints for studying behavior changes; access conditions and pinned runtimes apply. |
 | **1.1 Mini — base**      | [0.5B](https://huggingface.co/swiss-ai/Apertus-v1.1-0.5B) · [1.5B](https://huggingface.co/swiss-ai/Apertus-v1.1-1.5B) · [4B](https://huggingface.co/swiss-ai/Apertus-v1.1-4B)                            | Smaller distilled text models.                                                                        |
 | **1.1 Mini — Instruct**  | [0.5B](https://huggingface.co/swiss-ai/Apertus-v1.1-0.5B-Instruct) · [1.5B](https://huggingface.co/swiss-ai/Apertus-v1.1-1.5B-Instruct) · [4B](https://huggingface.co/swiss-ai/Apertus-v1.1-4B-Instruct) | Compact conversational models.                                                                        |
 | **1.1 Mini — quantized** | [Collection](https://huggingface.co/collections/swiss-ai/apertus-mini) · [vLLM NVFP4A16 1.5B](https://huggingface.co/swiss-ai/Apertus-v1.1-1.5B-Instruct-vLLM-NVFP4A16)                                  | Official MLX INT3/INT4/INT6 variants at all three sizes, plus the vLLM build.                         |
@@ -77,6 +79,9 @@ Supporting models: [pretraining toxicity classifier](https://huggingface.co/swis
 - [pretrain-code](https://github.com/swiss-ai/pretrain-code) and [Megatron-LM](https://github.com/swiss-ai/Megatron-LM) — Apertus pretraining entry point and underlying distributed training fork.
 - [pretrain-data](https://github.com/swiss-ai/pretrain-data) — Reconstruct the pretraining corpus from its sources.
 - [posttraining](https://github.com/swiss-ai/posttraining) — Supervised fine-tuning and alignment experiments.
+- [LongContextQA](https://github.com/swiss-ai/LongContextQA) — Synthetic long-context retrieval, word-counting and document-ordering tasks used in Apertus 1.5 training.
+- [verl](https://github.com/swiss-ai/verl) and [verl-recipe](https://github.com/swiss-ai/verl-recipe) — Swiss AI forks used for Apertus 1.5 reinforcement learning with verifiable rewards.
+- [self-distillation](https://github.com/swiss-ai/self-distillation) — Self-distillation policy optimization code used for the 1.5 8B charter-alignment stage.
 - [posttraining-data](https://github.com/swiss-ai/posttraining-data) — Download, standardize, filter, decontaminate, and mix post-training data.
 - [apertus-finetuning-recipes](https://github.com/swiss-ai/apertus-finetuning-recipes) — Full-parameter and LoRA recipes using Transformers, TRL, and Accelerate; [walkthrough](https://apertus-ai.org/docs/tech/fine-tuning/) targets the original 8B/70B models.
 - [multimodal-data](https://github.com/swiss-ai/multimodal-data) — Apertus 1.5 image/audio preparation, including a [dataset inventory](https://github.com/swiss-ai/multimodal-data/blob/main/datasets/DATASETS.md).
@@ -106,9 +111,10 @@ Supporting models: [pretraining toxicity classifier](https://huggingface.co/swis
 - [Data transparency archive](https://github.com/swiss-ai/apertus-data-transparency) — Versioned dataset and release documentation.
 - **Web filtering:** [FineWeb tags](https://huggingface.co/datasets/swiss-ai/fineweb-compliant-tag), [FineWeb-2 tags](https://huggingface.co/datasets/swiss-ai/fineweb-2-compliant-tag), and [FineWeb-Edu tags](https://huggingface.co/datasets/swiss-ai/fineweb-edu-compliant-tag).
 - **Robots.txt artifacts:** [English blocked domains](https://huggingface.co/datasets/swiss-ai/robots-txt-blocked-domains-english), [multilingual blocked domains](https://huggingface.co/datasets/swiss-ai/robots-txt-blocked-domains-multilingual), and [compressed files](https://huggingface.co/datasets/swiss-ai/fineweb-robots-txt-files-compressed).
-- **Swiss language corpora:** [Swiss pretraining](https://huggingface.co/datasets/swiss-ai/apertus-pretrain-swiss), [Romansh pretraining](https://huggingface.co/datasets/swiss-ai/apertus-pretrain-romansh), and [Romansh post-training](https://huggingface.co/datasets/swiss-ai/apertus-posttrain-romansh).
+- **Swiss language corpora:** [Swiss pretraining](https://huggingface.co/datasets/swiss-ai/apertus-pretrain-swiss), [Romansh pretraining](https://huggingface.co/datasets/swiss-ai/apertus-pretrain-romansh), [Romansh post-training](https://huggingface.co/datasets/swiss-ai/apertus-posttrain-romansh), and [backtranslated Romansh SFT](https://huggingface.co/datasets/swiss-ai/apertus-pretrain-romansh-backtranslated-sft).
 - **Text pretraining research:** [processed Project Gutenberg](https://huggingface.co/datasets/swiss-ai/project_gutenberg_preprocessed) and [poison/canary data](https://huggingface.co/datasets/swiss-ai/apertus-pretrain-poisonandcanaries).
-- **Post-training:** [SFT mixture](https://huggingface.co/datasets/swiss-ai/apertus-sft-mixture), [Africa SFT](https://huggingface.co/datasets/swiss-ai/africa-sft), [Africa preferences](https://huggingface.co/datasets/swiss-ai/africa-preferences), and [1.5 preference data](https://huggingface.co/datasets/swiss-ai/Apertus_v1.5_Preference_Data).
+- **Post-training:** [SFT mixture](https://huggingface.co/datasets/swiss-ai/apertus-sft-mixture), [Africa SFT](https://huggingface.co/datasets/swiss-ai/africa-sft), and [Africa preferences](https://huggingface.co/datasets/swiss-ai/africa-preferences).
+- **1.5 post-training releases:** [Text SFT mix](https://huggingface.co/datasets/swiss-ai/Apertus-v1.5-SFT-mix), [annotated preference pool](https://huggingface.co/datasets/swiss-ai/Apertus-v1.5-Preference-Pool), and [DPO training pairs](https://huggingface.co/datasets/swiss-ai/Apertus-v1.5-Preference-Data).
 - **Instruction following:** [verified SFT](https://huggingface.co/datasets/swiss-ai/if-sft-verified-singleturn-all), [RL prompts](https://huggingface.co/datasets/swiss-ai/if-rl-singleturn-prompts), and [hard RL prompts](https://huggingface.co/datasets/swiss-ai/if-rl-singleturn-hard-prompts).
 - **Multimodal source collections:** [NASA](https://huggingface.co/datasets/swiss-ai/nasa), [Our World in Data](https://huggingface.co/datasets/swiss-ai/owid), [Smithsonian](https://huggingface.co/datasets/swiss-ai/smithsonian), and [swisstopo](https://huggingface.co/datasets/swiss-ai/swisstopo).
 - **Evaluation datasets:** [mLogiQA](https://huggingface.co/datasets/swiss-ai/mlogiqa), [MathQA](https://huggingface.co/datasets/swiss-ai/math_qa), [BLEnD sample](https://huggingface.co/datasets/swiss-ai/blend-sample), and [HalluLens](https://huggingface.co/datasets/swiss-ai/hallulens).
@@ -124,6 +130,7 @@ Supporting models: [pretraining toxicity classifier](https://huggingface.co/swis
 ### Papers and technical sources
 
 - [Apertus technical report](https://arxiv.org/abs/2509.14233) — Original architecture, training, data, and evaluations; [report repository](https://github.com/swiss-ai/apertus-tech-report).
+- [Apertus 1.5 technical report](https://arxiv.org/abs/2610.15542) — Multimodal continued pretraining, reasoning, post-training stages, ablations and evaluations; companion [release overview](https://apertus-ai.org/articles/2026-07-apertus-1-5/).
 - [Apertus Mini: distillation and quantization](https://arxiv.org/abs/2605.29128) — Smaller-model family and compression methods.
 - [Training Apertus on Alps](https://arxiv.org/abs/2604.12973) — HPC engineering and distributed-training lessons.
 - [Web crawling opt-outs](https://arxiv.org/abs/2504.06219) — Measuring the effect of respecting data-source exclusions.
@@ -131,10 +138,12 @@ Supporting models: [pretraining toxicity classifier](https://huggingface.co/swis
 - [xIELU activation](https://arxiv.org/abs/2411.13010) and [AdEMAMix optimizer](https://arxiv.org/abs/2409.03137) — Core architectural and optimization ingredients.
 - [INCLUDE](https://arxiv.org/abs/2411.19799) and [Global MMLU](https://arxiv.org/abs/2412.03304) — Multilingual evaluation references.
 - [Parity-aware BPE](https://arxiv.org/abs/2508.04796) — Cross-language tokenization research; [code](https://github.com/swiss-ai/parity-aware-bpe).
-- [Research library](https://apertus-ai.org/pages/research/) and [Zotero group](https://www.zotero.org/groups/6385576/apertus) — Papers and supporting literature on data, optimization, safety, and serving. The page still lists the 1.5 technical report as forthcoming at the research date.
+- [Research library](https://apertus-ai.org/pages/research/) and [Zotero group](https://www.zotero.org/groups/6385576/apertus) — Papers and supporting literature on data, optimization, safety, and serving.
 
 ### Research projects
 
+- [ONWARD degeneration probes](https://github.com/swiss-ai/degeneration-probe) — Degeneration-onset datasets, hidden-state probes and false-alarm evaluation for original Apertus 8B Instruct and comparison models; [released probes](https://huggingface.co/collections/marcodene/onward-degeneration-probes). Research tooling, not a validated deployment safeguard.
+- [SFT Data Scorer](https://github.com/aebelge/sftdashboard) — Dataset inspection, annotation and score-based selection dashboard with Apertus 1.5 dataset/scoring adapters. Research prototype; default scores are synthetic fixtures. MIT.
 - [apertus-probes](https://github.com/swiss-ai/apertus-probes) — Hallucination probes and activation analysis.
 - [apertus-translate](https://github.com/swiss-ai/apertus-translate) — Translation experiments and human-evaluation annotations.
 - [vocab-reduction](https://github.com/swiss-ai/vocab-reduction) — Vocabulary-size optimization for training and inference.
@@ -194,7 +203,8 @@ Supporting models: [pretraining toxicity classifier](https://huggingface.co/swis
 - [Apertus SEA-LION v4 8B](https://huggingface.co/aisingapore/Apertus-SEA-LION-v4-8B-IT) — AI Singapore's Southeast Asian language adaptation; [GGUF](https://huggingface.co/aisingapore/Apertus-SEA-LION-v4-8B-IT-GGUF) and [release collection](https://huggingface.co/collections/aisingapore/sea-lion-v4).
 - [Apertus EstLLM](https://huggingface.co/tartuNLP/Apertus-EstLLM-8B-Instruct-0326) — TartuNLP's Estonian adaptation; [base checkpoint](https://huggingface.co/tartuNLP/Apertus-EstLLM-8B-1125) and [paper](https://arxiv.org/abs/2603.02041).
 - **Apertus MeditronFO:** [8B](https://huggingface.co/EPFLiGHT/Apertus-8B-MeditronFO) and [70B](https://huggingface.co/EPFLiGHT/Apertus-70B-MeditronFO) — Medical-domain research models; [training pipeline](https://github.com/EPFLiGHT/FullyOpenMeditron) and [paper](https://arxiv.org/abs/2605.16215).
-- [Greek Apertus](https://github.com/eellak/greek-apertus) — Ongoing Greek continued-pretraining and tokenizer project using GlossAPI data; tooling, not a finished model release.
+- [Greek Apertus](https://github.com/eellak/greek-apertus) — Greek adaptation of original Apertus 8B, with published [continued-pretraining weights](https://huggingface.co/glossAPI/apertus-8b-greek-cpt) and an [instruction-tuned v0.5 preview](https://huggingface.co/glossAPI/greek-apertus-8b-instruct). Apache-2.0 weights; gated downloads.
+- [Apertus Decide](https://huggingface.co/andreasmartin/apertus-v1.1-swiss-decide-0.4b-bidir) — Experimental Mini-derived bidirectional encoder for runtime-defined choices, ordered scores and boolean decisions, with a [playground/API implementation](https://huggingface.co/spaces/andreasmartin/apertus-decide). Non-generative; confidence is not probability of correctness. Apache-2.0.
 - [Andreas Martin's Apertus collection](https://huggingface.co/collections/andreasmartin/apertus) — Experimental and educational adaptations, including Apertus 1.1 Mini and 1.5 embedding conversions, text-only formats, and a biomedical fine-tune.
 
 ### Community fine-tuning tutorials
@@ -248,12 +258,31 @@ Entries were found through the official [directory](https://apertus-ai.org/pages
 - [Apertus AI workshop](https://github.com/blancsw/apertus-ai-workshop) — Infomaniak-backed RAG combining Apertus generation with separate embedding and reranking models.
 - [Emilie](https://github.com/veronica-builds/emilie) — Community legal-document assistant with Apertus support and MCP-based case-law lookup.
 - [CertusAI](https://github.com/saurluca/CertusAI) — Swiss AI Weeks legal-assistant project using Apertus.
+- [Farmly](https://github.com/Kirchenfeldrobotics/Farmly-Swiss-AI-Weeks) — Liebefeld Swiss AI Weeks **2025** parcel-sharing prototype using original Apertus 70B to extract transport requests, with a Flutter client and route-matching backend. PolyForm Noncommercial 1.0.0; external service credentials are required.
 
 ## Hack Apertus projects
 
-Selected community projects from [Hack Apertus](https://hackapertus.ch/), reviewed on **October 9, 13 and 16, 2026**, covering the online hackathon and emerging on-site projects. These are experimental prototypes and research tools, not official Apertus releases. Selection requires an explicit code licence, project-specific documentation, a concrete Apertus use, and substantive implementation. See the [closing-day review](RESEARCH.md#hack-apertus-closing-day-discovery--october-16-2026) and earlier notes for decisions and limitations; software and reported results were not independently tested.
+Selected community projects from [Hack Apertus](https://hackapertus.ch/), reviewed on **October 9, 13, 16 and 20, 2026**, covering the online hackathon and the Liebefeld on-site event. These are experimental prototypes and research tools, not official Apertus releases. Selection requires an explicit code licence, project-specific documentation, a concrete Apertus use, and substantive implementation. See the [Liebefeld and new-resource review](RESEARCH.md#liebefeld-and-new-resource-discovery--october-20-2026) and earlier notes for decisions and limitations; software and reported results were not independently tested.
 
-Online submissions closed on **October 16, 2026 at 12:00 CEST**. No named winners were found in the checked public organizer sources that evening. The [official schedule](https://hackapertus.ch/online-hack) puts the jury decision by **October 23**; [Devpost rules](https://hackapertus.devpost.com/rules) estimate the announcement at **12:00 CEST on October 23, 2026**, subject to change. Directory inclusion does not establish submission acceptance or an award.
+The online round closed on **October 16, 2026**; the separate [Liebefeld on-site event](https://hackapertus.ch/regions/bern-liebefeld) ran on **October 18–19**. No named online or Liebefeld winners were found in the public organizer sources checked on **October 20**. [Devpost rules](https://hackapertus.devpost.com/rules) estimate the online winners announcement at **12:00 CEST on October 23, 2026**, subject to change. Directory inclusion does not establish submission acceptance or an award.
+
+### Liebefeld on-site projects
+
+- [CORA](https://github.com/Anakalypto/CORA-Apertus) — Archive-metadata classification and enrichment with Apertus 1.5, source provenance, retrieval and an exploration interface. Apache-2.0; extracted entities and summaries require review.
+- [Bern Life](https://github.com/CPD9/bern-life) — Research-expertise navigator presented as a walkable Bern game; Apertus expands queries and helps match institutional pages with quoted evidence. Apache-2.0.
+- [Bern Fit](https://github.com/Grozby/kinder-bueno) — Company-to-Bern research matching with Apertus-assisted analysis, semantic search and source-quote checks. MIT; evaluation uses a small team-authored query set.
+- [RAGlette](https://github.com/Najahiri/mylife-with-tokens) — Apertus research agent over Bern institutional pages, with source-backed matches and editable presentation/PDF export. GPL-3.0; the configured API receives prompts and retrieved text.
+- [B2Bern](https://github.com/Spaghetti-Overflow/hack-apertus-stregoni) — Apertus-assisted investment/expertise briefs with source-backed claims, review and export. Apache-2.0; combined end-to-end acceptance checks remain incomplete.
+- [mutz](https://github.com/beSaif/mutz) — Company one-pager to Bern expertise leads, using Apertus 1.5 and source quotations in a review interface. MIT.
+- [Bern Innovation Engine](https://github.com/davidbonaccorsi/hackapertusBern) — Bern research navigator combining Apertus extraction/query expansion, vector retrieval and model-assisted result filtering. Apache-2.0; source traceability does not guarantee correct claims.
+- [Dreamers ParlTopics](https://github.com/edu008/Dreamers4OpenParl) — Apertus 1.5 topic classification for OpenParlData, with APS/custom-topic labels and evaluation tooling. Apache-2.0; partial corpus labelling and coarse reference labels limit validation.
+- [Saarlanders Research & Expertise Navigator](https://github.com/ksjayasankar/liebefeld-saarlanders) — Apertus-assisted needs extraction, Bern expertise retrieval and source-quoted explanations with a separate model check. Apache-2.0.
+- [aperTOPic](https://github.com/matthvalette/aperTOPic) — Parliamentary search and Apertus topic classification using the APS scheme, with a web service and local client. Apache-2.0; the technical-report template remains unfinished.
+- [Parlamentsthemen](https://github.com/prakash-aryan/parlamentsthemen) — Parliamentary topic monitoring with an Apertus-derived [LoRA adapter and classification head](https://huggingface.co/merabro/Apertus-ParlTopics-8B), review UI and chat-model explanations. Apache-2.0.
+- [Unisono](https://github.com/Dinesh18S/parltopics) — Apertus classification of Swiss parliamentary topics with supporting sentences, search and human review. Apache-2.0; disclosed recall and long-document failures limit completeness.
+- [ParlTopic](https://github.com/Felipe3052/hackapertus-openparldata) — Apertus topic-card classification with quoted evidence, batch/API workflows and a Streamlit review interface. Apache-2.0; offline replay and live inference are separate modes.
+- [ParlaRadar](https://github.com/sagnikdas-ml/Parliament_Classifier_Bern_Hackathon) — APS/custom-topic classification with Apertus 1.5, quote validation, abstention and review tools. MIT; the earlier 8B benchmark was not rerun for the current 70B configuration.
+- [Stapfer evidence explorer](https://github.com/jean3P/bern-archives-apertus) — Exploration of the 1799 school survey using preserved transcriptions, retrieval and cited Apertus answers, with separate saved-run review. MIT code; historical data retain their own terms.
 
 ### Red-teaming and evaluation
 
@@ -277,6 +306,12 @@ Online submissions closed on **October 16, 2026 at 12:00 CEST**. No named winner
 
 ### Document understanding and grounded answers
 
+- [KMU-Compliance-Check](https://github.com/alexsuter16/kmu-compliance-check) — Apertus-assisted pre-check of Swiss online-shop pages against selected legal requirements, with source evidence and draft corrections. Apache-2.0; limited page coverage and model errors require legal review.
+- [TenderProof](https://github.com/Vishwa-docs/TenderProof) — Equipment-procurement review combining Apertus source extraction, encoded constraint checks and human approval of evidence. Apache-2.0; solver results cover only encoded obligations.
+- [ApertusVote](https://github.com/CraigChiambiro/hackapertus-ost) — Apertus 1.5 8B claim classification over Swiss voting-booklet text/PDFs, with retrieved passages and usage records. Apache-2.0; official held-out evaluation remains pending.
+- [Fact Attack](https://github.com/JJukic/Apertus-Team-Fact-Attack-2026) — Multilingual voting-booklet claim verification using Apertus 1.5, hybrid page retrieval and cited evidence. Apache-2.0 source; the report identifies AGPL obligations for the PyMuPDF-based image.
+- [OpenAlps](https://github.com/rohIta-k/OpenAlps) — Multilingual voting-booklet NLI with Apertus 1.5 8B/70B, hybrid retrieval and evidence-selection experiments. Apache-2.0.
+- [Macagni/Kessler RSD adaptation](https://github.com/g1anci/hackapertus_submission_track_2_uzh_tk_gm_clean) — Apertus 1.5 8B adaptation for cross-language token-level semantic differences, with synthetic-data, QLoRA/full-training and evaluation notebooks. Apache-2.0; teacher errors and development-set exposure limit conclusions.
 - [Concordance](https://github.com/Ali-Aoun5/concordance-hackapertus) — Trilingual Swiss-law divergence review combining rules, an Apertus 8B/70B cascade, source-quotation checks and recorded-response replay. Apache-2.0; findings require legal review.
 - [Alpenrecht AI](https://github.com/Anakalypto/AlpenRecht) — Apertus legal Q&A retrieving federal, cantonal and communal sources with citation checks; the author's evaluation reports substantial factual errors. Apache-2.0.
 - [ParliParla](https://github.com/Avonik/ParliParla) — Apertus 1.5 8B extraction of parliamentary affairs into a common schema, with quote/span provenance and cross-parliament evaluation artifacts. Apache-2.0.
@@ -331,6 +366,13 @@ Online submissions closed on **October 16, 2026 at 12:00 CEST**. No named winner
 
 ### Applications, workflow controls and adaptation
 
+- [Inbrev](https://github.com/NWichter/Hack_Apertus_2B_Inbrev) — Administrative inbox review for medical practices using Apertus, source quotations and human handling of symptom messages. Apache-2.0; evaluation is synthetic and does not establish clinical correctness.
+- [REDRESS × Apertus](https://github.com/Mah-ux-dotcom/redress-ai) — Rule-based review of automated-decision notices with Apertus translation/explanation drafts and lexical evidence checks. Apache-2.0; default mock mode is separate from the live model path.
+- [Ordner](https://github.com/Simlowker/ordner) — Swiss paperwork assistant combining rules, document extraction and local Apertus tools; prepares material for review without filing it. Apache-2.0; synthetic-document and explanation errors are disclosed.
+- [Meditations RAG](https://github.com/YingzhiVA/meditations-Apertus-RAG) — Retrieves passages from Marcus Aurelius using Apertus-assisted query transformation and safety routing, with source text and an evaluation workflow. Apache-2.0; English-only, small single-rater evaluation.
+- [AI Fridge Chef](https://github.com/williamcheung/aifridgechef) — Apertus-assisted food-image inventory and recipe suggestions with editable voice/text drafts. Apache-2.0; food recognition, nutrition and dietary claims require user review.
+- [Checked rescue briefings](https://github.com/prakash-aryan/rescue-briefings-apertus) — Apertus 1.5 parses multilingual rescue briefings into typed missions checked by deterministic rules in a simulated drone/ground-robot setting. Apache-2.0; no physical or physics-engine validation.
+- [SwarmOps vision-language grounding](https://github.com/prakash-aryan/see-it-say-it-pick-it-apertus) — Separates image perception, Apertus instruction parsing and deterministic pick/place planning for the ZHAW workcell challenge. Apache-2.0; single-view occlusion and object-identification errors remain.
 - [Grounded Intent](https://github.com/AS8148/grounded-intent) — Local workcell-image interpretation with open vision models, Apertus language reasoning and checked pick/place plans; includes a browser review interface. Apache-2.0; it does not control a robot.
 - [See It, Say It, Pick It — Zemljic/Ryser](https://github.com/NoahZemljic/hack-apertus) — Apertus instruction/planning pipeline with Qwen visual grounding, SAM segmentation and geometric scene graphs. Apache-2.0.
 - [See It, Say It, Pick It — Gude2Learn](https://github.com/jdawnduan/Gude2Learn) — Local Ollama pipeline separating open-model perception from text-only Apertus planning, with geometric hints and saved response traces. Apache-2.0.
