@@ -8,8 +8,7 @@
 
 A curated guide to [Apertus](https://www.apertus-ai.org/), the open multilingual model family from the [Swiss AI Initiative](https://www.swiss-ai.org/), developed by EPFL, ETH Zurich, and CSCS. Official models, reproducibility resources, tools, integrations, and community projects.
 
-> [!IMPORTANT]
-> This is a fully independent, community-maintained project. It is not affiliated with, sponsored by, or endorsed by the Apertus project or the institutions behind it.
+> **Important:** This is a fully independent, community-maintained project. It is not affiliated with, sponsored by, or endorsed by the Apertus project or the institutions behind it.
 
 **Last full ecosystem review: September 26, 2026; latest targeted Hack Apertus and new-resource review: October 20, 2026.** Independent community list; “official” denotes Apertus team or Swiss AI resources. External-resource descriptions reflect their dated reviews, not continuous verification. See [research notes](RESEARCH.md) for scope and verification limits.
 
