@@ -14,7 +14,7 @@ For corrections, include the current link, replacement or evidence, and the date
 
 ## Updating with an AI agent
 
-Ask the agent to read and follow [the maintenance skill](https://github.com/rnckp/awesome-apertus/blob/main/.agent/skills/update-awesome-apertus/SKILL.md). For example: “Use `.agent/skills/update-awesome-apertus/SKILL.md` to refresh the Apertus resources, verify changed links, and update the research notes.” The file is portable agent guidance; it does not need an authenticated connector.
+Ask the agent to read and follow [the maintenance skill](https://github.com/rnckp/awesome-swiss-ai/blob/main/.agent/skills/update-awesome-swiss-ai/SKILL.md). For example: “Use `.agent/skills/update-awesome-swiss-ai/SKILL.md` to refresh the Apertus resources, verify changed links, and update the research notes.” The file is portable agent guidance; it does not need an authenticated connector.
 
 ## Publishing the website
 
@@ -22,4 +22,4 @@ In the repository's **Settings → Pages → Build and deployment**, select **Gi
 
 `_config.yml` configures `README.md` as the homepage and relative Markdown links for conversion to HTML destinations. Edit the Markdown sources, not generated files. The Pages workflow (`.github/workflows/pages.yml`) checks the generated homepage, stylesheet file and URL against the Pages base path, research notes, contribution guidelines, licence, one homepage anchor and selected tooling exclusions before deployment; it does not audit all links. If the repository or Pages path changes, review the config and workflow checks together. Agent instructions, Python helpers, tests and default maintenance reports are excluded from the site.
 
-For helper setup, report commands and offline checks, use the [maintenance helper documentation](https://github.com/rnckp/awesome-apertus/blob/main/src/README.md).
+For helper setup, report commands and offline checks, use the [maintenance helper documentation](https://github.com/rnckp/awesome-swiss-ai/blob/main/src/README.md).

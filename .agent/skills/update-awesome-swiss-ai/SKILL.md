@@ -1,9 +1,9 @@
 ---
-name: update-awesome-apertus
-description: Maintain and update the Awesome Apertus resource list through current web research and the repository's resource-counting and link-checking scripts. Use for full refreshes, new resources, stale entries, broken links, duplicates, and model-version corrections.
+name: update-awesome-swiss-ai
+description: Maintain and update the Awesome Swiss AI resource list through current web research and the repository's resource-counting and link-checking scripts. Use for full refreshes, new resources, stale entries, broken links, duplicates, and model-version corrections.
 ---
 
-# Update Awesome Apertus
+# Update Awesome Swiss AI
 
 Maintain a comprehensive but concise resource list for the **Swiss AI Apertus model family**. The repository root is three directories above this skill folder (`../../..`). Run maintenance commands there; unlinked file paths below are relative to that root. Do not confuse Apertus with similarly named cinema, VR, or commercial projects.
 
@@ -52,8 +52,8 @@ make reports       # Run both report helpers
 For a full refresh, use the reports to establish a baseline, then rerun the affected checks after editing. For a targeted update, check the changed resources and related claims without unnecessarily repeating a full network crawl. Both CLIs accept an input Markdown file and `--output`; for example:
 
 ```sh
-make count-sources ARGS='README.md --output /tmp/apertus-counts.md'
-make check-links ARGS='README.md --output /tmp/apertus-links.md'
+make count-sources ARGS='README.md --output /tmp/swiss-ai-counts.md'
+make check-links ARGS='README.md --output /tmp/swiss-ai-links.md'
 uv run --locked check-links --help
 ```
 
@@ -61,8 +61,8 @@ To check only changed URLs, put those links in a temporary Markdown file and pas
 
 Interpret the results according to the implementation:
 
-- [count_sources.py](../../../src/awesome_apertus/count_sources.py) counts top-level resource bullets containing external Markdown links under level-two headings, grouped by section. Secondary links, nested bullets, fenced examples, and table rows do not add entries. Model/provider tables are therefore excluded, and separate cross-references count again. Report these as **resource-bullet entries**, not unique sources, models, publishers, or URLs.
-- [link_checker.py](../../../src/awesome_apertus/link_checker.py) checks unique HTTP(S) destinations after removing fragments. It follows redirects, tries HEAD, and falls back to a streamed GET on unsuccessful HEAD requests. It uses ten workers and a 30-second request timeout, without downloading response bodies.
+- [count_sources.py](../../../src/awesome_swiss_ai/count_sources.py) counts top-level resource bullets containing external Markdown links under level-two headings, grouped by section. Secondary links, nested bullets, fenced examples, and table rows do not add entries. Model/provider tables are therefore excluded, and separate cross-references count again. Report these as **resource-bullet entries**, not unique sources, models, publishers, or URLs.
+- [link_checker.py](../../../src/awesome_swiss_ai/link_checker.py) checks unique HTTP(S) destinations after removing fragments. It follows redirects, tries HEAD, and falls back to a streamed GET on unsuccessful HEAD requests. It uses ten workers and a 30-second request timeout, without downloading response bodies.
 - Link outcomes are `reachable` (2xx/3xx), `likely broken` (404/410), and `needs review` (other errors or connection failures). Exit status 1 means a likely broken link or missing input. **Exit status 0 can still include unresolved `needs review` results**; always read the report.
 - The checker does not inspect content, licensing, local files, or fragment targets. Verify those separately. Broad network failure indicates an inconclusive run, not that the directory's resources have disappeared.
 

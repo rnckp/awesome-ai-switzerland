@@ -41,7 +41,7 @@ The release and runtime observations below reflect the full ecosystem review dat
 
 ## Maintenance
 
-Review release pages and model cards first, then refresh providers, runtime support, community artifacts, and link status. Advance the README's full ecosystem review date only after a substantive ecosystem review; record targeted review dates separately. Follow [the contribution guidelines](CONTRIBUTING.md). Commands and checker limitations are documented in the [maintenance helper documentation](https://github.com/rnckp/awesome-apertus/blob/main/src/README.md).
+Review release pages and model cards first, then refresh providers, runtime support, community artifacts, and link status. Advance the README's full ecosystem review date only after a substantive ecosystem review; record targeted review dates separately. Follow [the contribution guidelines](CONTRIBUTING.md). Commands and checker limitations are documented in the [maintenance helper documentation](https://github.com/rnckp/awesome-swiss-ai/blob/main/src/README.md).
 
 ### Full review — September 26, 2026
 
