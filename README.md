@@ -271,7 +271,7 @@ Sources: official [directory](https://apertus-ai.org/pages/get-started/), [ecosy
 
 ## Hack Apertus projects
 
-Selected projects from [Hack Apertus](https://hackapertus.ch/), reviewed October 9–20, 2026. Inclusion requires an explicit code licence, project-specific documentation, substantive implementation and concrete Apertus use. These are community prototypes and research tools; software and reported results were not independently tested. See the [list audit](RESEARCH.md#list-audit--october-20-2026), [Liebefeld review](RESEARCH.md#liebefeld-and-new-resource-discovery--october-20-2026) and [GitHub follow-up](RESEARCH.md#github-omission-follow-up--october-20-2026) for evidence and selection limits.
+Selected projects from [Hack Apertus](https://hackapertus.ch/), reviewed October 9–20, 2026. Inclusion requires an explicit code licence, project-specific documentation, substantive implementation and concrete Apertus use. These are community prototypes and research tools; software and reported results were not independently tested. See the [selection notes](RESEARCH.md#selection-decisions) for decisions and open verification issues.
 
 **Code is Apache-2.0 unless stated otherwise.** Datasets, models, dependencies and source materials retain their own terms; licence notices without bundled licence text are identified separately.
 
