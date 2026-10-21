@@ -15,7 +15,7 @@ Observations below are from **October 20, 2026**; recheck before changing an ent
 - [ETH AI Center](https://ai.ethz.ch/) returned a 404 with “Cache Server Error: Not found UA”, while primary-site search still identified it as the homepage. Retained pending resolution of that discrepancy.
 - [Apertus 1.5 70B discussions](https://huggingface.co/swiss-ai/Apertus-v1.5-70B/discussions) returned 429 in the crawl and a targeted retry, but were readable through the browser. Retained as a rate-limit issue.
 - Fresh content reads remained unavailable for Swisscom/KVANT details, the stepping stone wiki, Apertus Decide and the Kaggle fine-tuning notebook. Their descriptions still depend on earlier dated reviews.
-- No named online or Liebefeld winners were established in checked public organizer sources. [Devpost rules](https://hackapertus.devpost.com/rules) estimated the online announcement for October 23 at 12:00 CEST, subject to change. Repositories alone do not establish accepted submissions or awards.
+- **Updated October 21:** ArchAI is the organizer-confirmed Liebefeld winner. Stregoni/B2Bern's reported third place has a source discrepancy, detailed below. No named online winners were established; [Devpost rules](https://hackapertus.devpost.com/rules) estimate October 23 at 12:00 CEST, subject to change.
 
 ## Selection decisions
 
@@ -37,3 +37,41 @@ Selected candidates worth revisiting, based on the October 20 review and earlier
 | [FormRehearsal](https://github.com/sumit1717/formrehearsal-hack-apertus) | Useful live Apertus interpretation and qualifying deployment; the authored example makes no provider calls. |
 | [Forester](https://github.com/bennyfathurr/Forester-Tower-Defense) | Documented fresh inference and completion of the pending asset audit. |
 | [Apertus StressLab](https://github.com/Alextsvr/apertus-stresslab) | Restored public source or a confirmed replacement. Removed after repository/README 404s and an unsuccessful replacement search; deletion versus private visibility was not established. |
+
+
+## Hack Apertus follow-up — October 21, 2026
+
+Targeted GitHub discovery and awards correction; earlier full-review and full-link-audit dates/totals are unchanged. Public API searches returned 200 repositories for `"Hack Apertus" in:readme` (both 100-result pages), 91 for `hackapertus in:name,description,readme`, 22 for `apertus bern in:readme created:>=2026-10-17`, 20 for `apertus Liebefeld in:readme`, and one for `hackpertus in:name,description,readme`. All responses reported `incomplete_results: false`. The broad four-query set contained 218 distinct repositories; the separate recent-update/Liebefeld/alternate-spelling pass contained 27, with overlap. These are discovery results, not accepted submissions. Compared repository identities with the current list and screened unlisted documentation; selected additions received licence, report, inventory and source checks. New discovery does not imply recent creation.
+
+### Awards
+
+The [organizer's spotlight](https://www.linkedin.com/posts/hack-apertus_spotlight-on-for-the-winner-of-the-first-activity-7518206147535896576-Kmml) explicitly identifies **ArchAI, team EDUCATION, as the Liebefeld winner**, qualified for the Grand Finals.
+
+The [jury member Susie Xi Rao's post](https://www.linkedin.com/posts/susie-xi-rao-a0199b15b_apertus-siliconlovefield-activity-7518031548185493504-F0oP) has an indexed excerpt naming EDUCATION first, Swiss-SDI runner-up and Stregoni third. Its accessible edited body names only EDUCATION. **Stregoni/B2Bern's third place is therefore reported with an explicit qualification**, rather than treated as independently corroborated. B2Bern's README identifies Stregoni and its members, but does not itself claim an award. No separate project was confidently mapped to the Swiss-SDI runner-up name. The eliainnocenti and RenatoMignone repositories are B2Bern team copies. No named online winners were established; October 23 remains the estimated announcement date.
+
+### Additions
+
+All seven additions have full Apache-2.0 code licence texts. Documentation, source data, datasets and auxiliary models retain their own terms. Paths below are relative to the linked repositories; files and reported results were inspected, not executed or independently reproduced.
+
+| Project | Evidence and limits |
+| --- | --- |
+| [Gied voting-booklet NLI](https://github.com/pgied/apertushack-fact-checking-pub) | `track_2a/src/llm.py`, model configurations and report: sentence retrieval, translation, vote scoping and Apertus 1.5 NLI. Scores use the public challenge cases; processing times exclude inference latency. |
+| [VoteLens](https://github.com/greateden/Hackathon26) | `track_2a/src/nli_judge.py`, report and `docs/evidence/release_smoke_20261014.json`: real 70B requests, quotation/vote-identity gates and negative coverage results. Development exposure and unpublished raw records limit reproduction. Bundled SentenceSwissBERT encoder is CC-BY-NC-4.0. |
+| [SwissDoc Q&A](https://github.com/MrFreemanO/swissdoc-qa-apertus) | `track_2b/src/llm_server.py`, report and `eval/results_apertus-0.5b.json`: Mini 0.5B/1.5B generation and recorded answers. The 1.5 8B path is recommended, not the measured default. Twelve team-written summaries are illustrative; thresholds were tuned on the same small set. |
+| [RelayZero](https://github.com/abhijeetnardele24-hash/relayzero) | `track_2b/src/backend/apertus_adapter.py`, report and `data/live_smoke_evidence.json`: three retained real-model incident extractions. The 24-incident comparison uses fixtures; operational safety and deployment isolation are not independently established. |
+| [StudyBridge](https://github.com/dukeoghenefejiroduke/studybridge-apertus/tree/main/track_2b) | Report, ingestion/retrieval/tutoring modules and `src/app/llm_client.py`. One reported live request establishes basic integration only. No demonstrated learning benefit, broad accuracy or phone-local inference. Substantive nested project documentation qualifies despite the template root. |
+| [Apertus Lightpath](https://github.com/theBlackfish01/ApertusNetworkGym) | Report, model cards, `track_2b/src/readers3.py`, decoding/training/simulation code and model-answer caches. Apertus 1.5 adaptations translate policies and compare readings. AI-written instructions, single training runs and simulated operators limit claims; no physical controller was exercised. |
+| [Canis Apertus Lab](https://github.com/UrsushoribilisMusic/canis-hackapertus-track2b) | Report, `track_2b/src/backend/runtime.py` and `model_probe.py`: local generation and hidden-state/logit access, with distinct mock and lexical fallbacks. The small-model disposition study does not validate a general emotional state or correctness probability; iOS reference and Docker implementation are distinct. |
+
+### Deferrals and exclusions
+
+- Existing Bern Match, Apertus Nash and Sovra Verify still lack explicit project-code licences. Earlier unresolved candidates remain deferred; no later update resolving their gaps was established.
+- Ari Widget Translator, Briefklar Desk, Scythe, Multilingual Review-Reply Triage, Polyglot Explainer and Nearby Stars have substantive code/reports, but their reports leave actual Apertus runs unmeasured or failed. Fixture/stub results are not successful model integration evidence. Template roots alone were not grounds for rejection.
+- [PolisProof](https://github.com/chapaevv123/PolisProof) has an Apache notice and real original-2509 trivial smoke prompts, but `evidence/live/results.md` records zero successful application runs for every route. Minimal `POLISPROOF_OK` replies do not establish document-auditing behavior.
+- Thalabus leaves component/data licensing unsettled; Sentinel x Apertus requires confirmation of pre-existing CORE rights. ChronoMine's report supplies no measured result supporting its broad deployment/compliance claims. Garden Oracle documents a client and licence notice, but no successful-run artifact or substantive technical report was established here.
+- Omitted duplicate team copies, profile/event indexes, unrelated Apertus names and unfinished templates. Coverage remains selective.
+
+
+### Verification
+
+The prepared update adds seven resource bullets: 148 Hack Apertus entries and 262 overall (141 and 255 before this pass). The existing link helper checked all nine new README destinations: nine reachable, no likely broken links and no inconclusive results. Patch applicability, entry uniqueness, local document targets, follow-up heading and whitespace checks passed. No applications, model inference or benchmarks were run. This was a targeted link check; the October 20 full-crawl totals remain historical. The update was prepared as a patch because the renamed checkout was readable but outside the session's writable paths; repository application remains pending.

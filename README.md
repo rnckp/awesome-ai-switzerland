@@ -10,7 +10,7 @@ A curated guide to [Apertus](https://www.apertus-ai.org/), the open multilingual
 
 > Independent, community-maintained list; not affiliated with, sponsored by, or endorsed by Apertus or its institutions. “Official” denotes resources from the Apertus team or Swiss AI.
 
-**List audit: October 20, 2026.** Last full ecosystem review: September 26, 2026; targeted additions through October 20. See [research notes](RESEARCH.md) for dated evidence and verification limits.
+**List audit: October 20, 2026.** Last full ecosystem review: September 26, 2026; targeted additions through October 21. See [research notes](RESEARCH.md) for dated evidence and verification limits.
 
 <details>
 <summary><strong>Table of Contents</strong></summary>
@@ -271,23 +271,23 @@ Sources: official [directory](https://apertus-ai.org/pages/get-started/), [ecosy
 
 ## Hack Apertus projects
 
-Selected projects from [Hack Apertus](https://hackapertus.ch/), reviewed October 9–20, 2026. Inclusion requires an explicit code licence, project-specific documentation, substantive implementation and concrete Apertus use. These are community prototypes and research tools; software and reported results were not independently tested. See the [selection notes](RESEARCH.md#selection-decisions) for decisions and open verification issues.
+Selected projects from [Hack Apertus](https://hackapertus.ch/), reviewed October 9–21, 2026. Inclusion requires an explicit code licence, project-specific documentation, substantive implementation and concrete Apertus use. These are community prototypes and research tools; software and reported results were not independently tested. See the [selection notes](RESEARCH.md#selection-decisions) for decisions and open verification issues.
 
 **Code is Apache-2.0 unless stated otherwise.** Datasets, models, dependencies and source materials retain their own terms; licence notices without bundled licence text are identified separately.
 
-The online round closed on **October 16, 2026**; the separate [Liebefeld on-site event](https://hackapertus.ch/regions/bern-liebefeld) ran on **October 18–19**. No named online or Liebefeld winners were found in the public organizer sources checked on **October 20**. [Devpost rules](https://hackapertus.devpost.com/rules) estimate the online winners announcement at **12:00 CEST on October 23, 2026**, subject to change. Directory inclusion does not establish submission acceptance or an award.
+The online round closed on **October 16, 2026**; the separate [Liebefeld on-site event](https://hackapertus.ch/regions/bern-liebefeld) ran on **October 18–19**. The organizer [confirms ArchAI (team EDUCATION) as the Liebefeld winner](https://www.linkedin.com/posts/hack-apertus_spotlight-on-for-the-winner-of-the-first-activity-7518206147535896576-Kmml). A [jury announcement](https://www.linkedin.com/posts/susie-xi-rao-a0199b15b_apertus-siliconlovefield-activity-7518031548185493504-F0oP) has an indexed excerpt reporting Stregoni/B2Bern in third place; its current body omits the runners-up, so that placing remains qualified (see [award notes](RESEARCH.md#hack-apertus-follow-up--october-21-2026)). Checked **October 21**. [Devpost rules](https://hackapertus.devpost.com/rules) estimate the online winners announcement at **12:00 CEST on October 23, 2026**, subject to change. Directory inclusion does not establish submission acceptance or an award.
 
 ### Liebefeld on-site projects
 
 #### Archives
 
-- [ArchAI](https://github.com/kirtanp/hackpertus-archives) — Swiss archive preparation and cited Q&A with Apertus 1.5, provenance-preserving exports, historical maps and evaluation tools. MIT code; archive data retain their terms, and citation checks do not establish answer correctness.
+- [ArchAI](https://github.com/kirtanp/hackpertus-archives) — **Liebefeld winner, team EDUCATION.** Swiss archive preparation and cited Q&A with Apertus 1.5, provenance-preserving exports, historical maps and evaluation tools. MIT code; archive data retain their terms, and citation checks do not establish answer correctness.
 - [CORA](https://github.com/Anakalypto/CORA-Apertus) — Archive-metadata classification and enrichment with Apertus 1.5, provenance, retrieval and an exploration interface; extracted entities and summaries need review.
 - [Stapfer evidence explorer](https://github.com/jean3P/bern-archives-apertus) — 1799 school-survey exploration with preserved transcriptions, retrieval, cited Apertus answers and separate saved-run review. MIT code; historical data retain their terms.
 
 #### Bern research and expertise matching
 
-- [B2Bern](https://github.com/Spaghetti-Overflow/hack-apertus-stregoni) — Apertus-assisted investment/expertise briefs with source-backed claims, review and export; combined end-to-end acceptance checks remain incomplete.
+- [B2Bern](https://github.com/Spaghetti-Overflow/hack-apertus-stregoni) — **Reported Liebefeld third place, team Stregoni** (see award notes above). Apertus-assisted investment/expertise briefs with source-backed claims, review and export; combined end-to-end acceptance checks remain incomplete.
 - [Bern Fit](https://github.com/Grozby/kinder-bueno) — Company-to-Bern research matching with Apertus analysis, semantic search and source-quote checks. MIT; evaluation uses a small team-authored query set.
 - [Bern Innovation Engine](https://github.com/davidbonaccorsi/hackapertusBern) — Bern research navigator with Apertus extraction/query expansion, vector retrieval and model-assisted filtering; traceability does not guarantee correct claims.
 - [Bern Life](https://github.com/CPD9/bern-life) — Walkable Bern research navigator; Apertus expands queries and helps match institutional pages with quoted evidence.
@@ -333,6 +333,8 @@ The online round closed on **October 16, 2026**; the separate [Liebefeld on-site
 
 #### Voting-booklet claims
 
+- [Gied voting-booklet NLI](https://github.com/pgied/apertushack-fact-checking-pub) — Apertus 1.5 translation and claim classification over retrieved booklet sentences, with vote-scoped BM25 retrieval and verbatim evidence. Reported scores use the public challenge data.
+- [VoteLens](https://github.com/greateden/Hackathon26) — Apertus 1.5 voting-booklet NLI with retrieval, vote-identity/citation checks and failure-analysis artifacts; stricter output gates can reject correct labels. Bundled SentenceSwissBERT weights are CC-BY-NC-4.0.
 - [Apertus Evidence Lab](https://github.com/hallzyx/apertus) — Multilingual voting-booklet classification with hybrid retrieval and a trained decision head over frozen Apertus 1.5; requires its specialized backend.
 - [ApertusVote](https://github.com/CraigChiambiro/hackapertus-ost) — Voting-booklet text/PDF claim classification with Apertus 1.5 8B, retrieved passages and usage records; official held-out evaluation remains pending.
 - [booklet-check](https://github.com/StuartYo/hack-apertus) — Voting-booklet NLI with local lexical/embedding retrieval, Apertus classification and evidence restored from PDF text.
@@ -371,6 +373,7 @@ The online round closed on **October 16, 2026**; the separate [Liebefeld on-site
 
 #### Legal, administrative and document Q&A
 
+- [SwissDoc Q&A](https://github.com/MrFreemanO/swissdoc-qa-apertus) — Local public-service Q&A with Apertus 1.1 Mini, BM25 retrieval, citations and extractive fallback. Small team-written corpus/evaluation; wrong source-present numbers can pass its guard.
 - [Alpenrecht AI](https://github.com/Anakalypto/AlpenRecht) — Swiss legal Q&A with federal, cantonal and communal retrieval and citation checks; the author reports substantial factual errors.
 - [Apertus Evidence Ledger](https://github.com/sgagestudio/apertus-evidence-ledger) — SQLite document retrieval with Apertus synthesis, exact-quote checks and a hash-based evidence ledger.
 - [Apertus QA](https://github.com/ventolabs-hq/apertus-qa) — Spanish Q&A over local Argentine official-statistics snapshots; Apertus plans and phrases answers while code supplies numeric values.
@@ -410,6 +413,7 @@ The online round closed on **October 16, 2026**; the separate [Liebefeld on-site
 
 ### Robotics and mission planning
 
+- [RelayZero](https://github.com/abhijeetnardele24-hash/relayzero) — Apertus 1.5 incident-report extraction with source-linked claim reconciliation and reviewable briefings. Three-report live smoke evidence is separate from its fixture-based comparative benchmark; operational reliability is unestablished.
 - [Checked rescue briefings](https://github.com/prakash-aryan/rescue-briefings-apertus) — Apertus 1.5 turns multilingual briefings into typed drone/ground-robot missions checked by deterministic rules. Simulated terrain and assumed operating limits; no physical or physics-engine validation.
 - [Grounded Intent](https://github.com/AS8148/grounded-intent) — Local workcell-image interpretation with open vision models, Apertus reasoning, checked pick/place plans and a browser review interface; does not control a robot.
 - [See It, Say It, Pick It — Asian Prompters](https://github.com/azamafridi23/see-it-say-it-pick-it-hack-apertus) — Object segmentation, scene graphs and Apertus planning/safety agents produce pick/place plans, clarification questions or refusals for the robotics challenge.
@@ -420,6 +424,7 @@ The online round closed on **October 16, 2026**; the separate [Liebefeld on-site
 
 ### Education, interviews and language
 
+- [StudyBridge](https://github.com/dukeoghenefejiroduke/studybridge-apertus/tree/main/track_2b) — Apertus study-material Q&A with retrieval, citations, quizzes and learner-progress tracking. One reported live request verifies basic integration, not tutoring effectiveness or answer accuracy.
 - [Bewerbär](https://github.com/iatee/Hack-Apertus/tree/main/track_2a) — Apertus apprenticeship-interview practice in German, French, Italian and Swiss German, with voice integration and criteria-based feedback; dialect feedback is less reliable.
 - [Interview Coach — Next Question](https://github.com/aliskin/apertus-interview-coach) — Apertus interview practice with a deterministic controller, multilingual feedback and development simulations; official benchmark and consumer-GPU validation remain outstanding.
 - [Los emal!](https://github.com/Alise441/los-emal) — Zurich German listening practice with Apertus dialogue, comprehension feedback, speech tools and everyday scenarios; generated dialect lacks native-speaker evaluation.
@@ -467,6 +472,8 @@ The online round closed on **October 16, 2026**; the separate [Liebefeld on-site
 
 ### Auditing, action controls and adaptation
 
+- [Apertus Lightpath](https://github.com/theBlackfish01/ApertusNetworkGym) — Fine-tuned Apertus 1.5 readers translate routing instructions into enforceable policies for an optical-network simulator, with disagreement review and recorded experiments. Synthetic instructions; no physical network controller was exercised.
+- [Canis Apertus Lab](https://github.com/UrsushoribilisMusic/canis-hackapertus-track2b) — Local Apertus chat and document retrieval with an experimental hidden-state/logit disposition readout. Lexical fallback and mock mode are separate; the readout is not a calibrated correctness score.
 - [Apertus Gate](https://github.com/ondmindmanagement-hub/apertus-gate) — Structured Apertus 1.5 risk review of proposed AI actions, producing allow, human-review or block decisions without executing actions.
 - [Apertus Sovereign Operations Bridge](https://github.com/ambrosinistefan8-stack/apertus-sovereign-operations-bridge) — Apertus 1.5 fact extraction with deterministic conflict checks and human gates for proposed actions. Apache-2.0 notice; full licence text is linked, not bundled.
 - [Bundesbrief](https://github.com/Powerworks-Global/bundesbrief) — Deterministic parliamentary-PDF extraction with optional local Apertus cross-checks, weighted review gates and a hash-chained ledger; default checks use a labelled stub.
