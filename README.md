@@ -10,7 +10,7 @@ A curated guide to [Apertus](https://www.apertus-ai.org/), the open multilingual
 
 > Independent, community-maintained list; not affiliated with, sponsored by, or endorsed by Apertus or its institutions. “Official” denotes resources from the Apertus team or Swiss AI.
 
-**List audit: October 20, 2026.** Last full ecosystem review: September 26, 2026; targeted additions through October 21. See [research notes](RESEARCH.md) for dated evidence and verification limits.
+**List audit: October 20, 2026.** Last full ecosystem review: September 26, 2026; targeted additions through October 22. See [research notes](RESEARCH.md) for dated evidence and verification limits.
 
 <details>
 <summary><strong>Table of Contents</strong></summary>
@@ -161,7 +161,7 @@ Supporting models: [pretraining toxicity classifier](https://huggingface.co/swis
 - [vocab-reduction](https://github.com/swiss-ai/vocab-reduction) — Vocabulary-size optimization for training and inference.
 - [prune-apertus-lm-head](https://github.com/swiss-ai/prune-apertus-lm-head) — 1.5 output-head conversion while retaining multimodal input token IDs.
 - [Apertus RAG evaluation](https://github.com/swiss-ai/ml4science-apertus-rag-evaluation) — Research comparing retrieval, chunking, and reranking strategies.
-- [apertus-speculative-decoding](https://github.com/swiss-ai/apertus-speculative-decoding) — Reproducible 1.5 serving-performance study.
+- [Apertus speculative decoding](https://github.com/swiss-ai/apertus-speculative-decoding) — Swiss AI semester research project comparing Apertus 1.5 draft-model, n-gram and EAGLE decoding on CSCS Clariden, with streaming benchmarks and correctness controls; experimental, with pinned runtimes and target-specific heads. Apache-2.0 declared in package metadata.
 - [apertus-tokenizer-development](https://github.com/swiss-ai/apertus-tokenizer-development) — Preliminary next-generation tokenizer research; not a released Apertus 2 model.
 
 ### Evaluation tools and results
@@ -261,6 +261,7 @@ Sources: official [directory](https://apertus-ai.org/pages/get-started/), [ecosy
 ### SDKs, automation, and application examples
 
 - [LiteLLM PublicAI provider](https://docs.litellm.ai/docs/providers/publicai) — Apertus routes for the Python SDK and proxy.
+- [llm-public-ai](https://github.com/simonw/llm-public-ai) — Public AI provider plugin for Simon Willison’s LLM CLI/Python library, with Apertus model discovery, streaming and separation of 1.5 thinking output; endpoint capabilities vary by model.
 - [Laravel Apertus](https://github.com/mmorand/laravel-apertus) — PHP/Laravel client with streaming and model listing.
 - [ApertusSharp](https://github.com/bhrnjica/ApertusSharp) — .NET client using Microsoft.Extensions.AI, with Semantic Kernel integration.
 - [Apertus n8n starter kit](https://github.com/aai-institute/apertus-n8n) — Python/curl extraction examples, three n8n workflows and local Ollama support; local tool calling is unsupported by the packaged model.
@@ -271,7 +272,7 @@ Sources: official [directory](https://apertus-ai.org/pages/get-started/), [ecosy
 
 ## Hack Apertus projects
 
-Selected projects from [Hack Apertus](https://hackapertus.ch/), reviewed October 9–21, 2026. Inclusion requires an explicit code licence, project-specific documentation, substantive implementation and concrete Apertus use. These are community prototypes and research tools; software and reported results were not independently tested. See the [selection notes](RESEARCH.md#selection-decisions) for decisions and open verification issues.
+Selected projects from [Hack Apertus](https://hackapertus.ch/), reviewed October 9–22, 2026. Inclusion requires an explicit code licence, project-specific documentation, substantive implementation and concrete Apertus use. These are community prototypes and research tools; software and reported results were not independently tested. See the [selection notes](RESEARCH.md#selection-decisions) for decisions and open verification issues.
 
 **Code is Apache-2.0 unless stated otherwise.** Datasets, models, dependencies and source materials retain their own terms; licence notices without bundled licence text are identified separately.
 
@@ -343,6 +344,7 @@ The online round closed on **October 16, 2026**; the separate [Liebefeld on-site
 - [Fact Attack](https://github.com/JJukic/Apertus-Team-Fact-Attack-2026) — Multilingual voting-booklet claim verification with Apertus 1.5, hybrid page retrieval and cited evidence. The report identifies AGPL obligations for the PyMuPDF-based image.
 - [GeaNaVid](https://github.com/NWichter/Hack_Apertus_2A_GeaNaVid) — Voting-booklet claim classification with Apertus 1.5, vote-scoped retrieval, cross-language translation, sentence/page evidence and recorded evaluation runs.
 - [kanhe](https://github.com/hoongyu/kanhe) — Multilingual voting-booklet classification with Apertus 1.5, BM25 retrieval, checked quotations and cached evaluation responses.
+- [Large Canelé Model — booklet-nli](https://github.com/MidsummerYU/large-canele-model-2a) — Apertus 1.5 8B/70B voting-booklet NLI with translated BM25 retrieval, source-span matching and recorded-call replay. Evaluation uses a split of the public dataset; unmatched model quotations can remain in the output.
 - [OpenAlps](https://github.com/rohIta-k/OpenAlps) — Multilingual voting-booklet NLI with Apertus 1.5 8B/70B, hybrid retrieval and evidence-selection experiments.
 - [yasuhito's voting-booklet NLI](https://github.com/yasuhito/hackapertus-ost) — Apertus 1.5 pipeline with retrieved source spans, native tool-call output and verbatim evidence restoration.
 

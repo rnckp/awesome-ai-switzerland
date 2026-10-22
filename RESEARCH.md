@@ -74,4 +74,36 @@ All seven additions have full Apache-2.0 code licence texts. Documentation, sour
 
 ### Verification
 
-The prepared update adds seven resource bullets: 148 Hack Apertus entries and 262 overall (141 and 255 before this pass). The existing link helper checked all nine new README destinations: nine reachable, no likely broken links and no inconclusive results. Patch applicability, entry uniqueness, local document targets, follow-up heading and whitespace checks passed. No applications, model inference or benchmarks were run. This was a targeted link check; the October 20 full-crawl totals remain historical. The update was prepared as a patch because the renamed checkout was readable but outside the session's writable paths; repository application remains pending.
+The prepared update adds seven resource bullets: 148 Hack Apertus entries and 262 overall (141 and 255 before this pass). The existing link helper checked all nine new README destinations: nine reachable, no likely broken links and no inconclusive results. Patch applicability, entry uniqueness, local document targets, follow-up heading and whitespace checks passed. No applications, model inference or benchmarks were run. This was a targeted link check; the October 20 full-crawl totals remain historical. The update was prepared as a patch because the renamed checkout was readable but outside the session's writable paths; the changes are now present in this checkout (confirmed October 22).
+
+
+## New-contribution follow-up — October 22, 2026
+
+Targeted discovery of new-to-list GitHub contributions, emphasizing the online and Liebefeld Hack Apertus rounds. This is not a new full ecosystem audit. The September 26 full-review date and October 20 full-link-check totals remain unchanged. A newly discovered entry need not be a newly created repository.
+
+### Discovery and selection
+
+Public GitHub repository searches returned 197 matches for `"Hack Apertus" in:readme` (both pages read), 88 for `hackapertus in:name,description,readme`, 17 for `apertus Liebefeld in:readme`, 16 for `apertus created:>=2026-10-17`, and one for `hackpertus in:name,description,readme`. Together these yielded 218 distinct repositories, 76 not linked under the same repository identity in the README. All search responses reported `incomplete_results: false`; search coverage is still selective. Read the available unlisted root READMEs, then inspected selected nested reports, file inventories, licences and implementation files.
+
+Additional searches covered `apertus in:readme created:>=2026-10-17` (34 matches), `"Hack Apertus" in:readme pushed:>=2026-10-21` (four), and `apertus liebefeld in:readme fork:true` (20). A name/description search for Apertus repositories pushed since October 20 found nine, including the speculative-decoding study updated October 22. These searches helped find contributions outside the event-specific keywords; totals overlap and are not submission counts.
+
+### Additions and refreshed entry
+
+Added booklet-nli and llm-public-ai; refreshed the existing speculative-decoding entry in place.
+
+| Project | Evidence and limits |
+| --- | --- |
+| [Large Canelé Model — booklet-nli](https://github.com/MidsummerYU/large-canele-model-2a) | Online OST challenge. Full Apache-2.0 code licence; documentation/report CC-BY-4.0 and OST data MIT. Read `track_2a/technical_report.md`, `src/booklet_nli/client.py`, `predict.py` and `evidence.py` under `track_2a/`, and retained advanced 8B test scores. The inventory includes CSCS 8B/70B response recordings and predictions. Recorded-call replay is distinct from fresh inference. Its test split comes from public data and shares booklets/votes with development; source-span matching retains the model quotation when no close match exists. No official hidden-test result is established. |
+| [llm-public-ai](https://github.com/simonw/llm-public-ai) | Created October 20. Full Apache-2.0 licence; read README, `pyproject.toml` and `llm_public_ai.py`. Registers Public AI models with the LLM library and handles streaming and Apertus inline thinking markers. Author documentation describes recorded API tests and model-specific capabilities; this review did not run the plugin or verify a live endpoint. |
+| [Apertus speculative decoding](https://github.com/swiss-ai/apertus-speculative-decoding) | Updated October 22. README and `pyproject.toml` identify a semester research project, an Apache-2.0 metadata declaration, streaming measurements, deployment controls and pinned runtime requirements. The tree exposes methods, results and research reports; organization ownership does not make these experiments a supported serving release. No bundled root `LICENSE` was available at the checked path. No speedup or correctness result was independently reproduced. |
+
+### Liebefeld and other exclusions
+
+- [fra-itc Bern Expertise Navigator](https://github.com/fra-itc/bern-expertise-navigator) was updated October 22 and has an Apache-2.0 licence and substantive implementation. Its current report still says all measured results are from the rules baseline, with Apertus evaluation and live figures pending. Deferred on the same evidence basis as the previously noted Bern Expertise Navigator; a reachable model-list endpoint does not establish successful application inference.
+- The eliainnocenti and RenatoMignone B2Bern repositories remain team copies of the listed Stregoni project. The Coupur repository repeats the BernMiner team work. No additional distinct Liebefeld project meeting the current inclusion criteria was established in this pass; existing entries remain.
+- The alternate Belegt repository (`chessoren/swiss`) and CLAUSESHIFT experiment repository (`guelmbaye/clauseshift_track2a`) are not additional independent projects alongside their already listed author repositories.
+- Rütli explicitly leaves live Eunomia/Apertus integration unverified; BhashaCut reports API testing blocked. Apertus Lab reports narrow live experiments but its checked licence files cover a nested submission and vendored assets, without an established project-wide code grant. Kept out pending the missing evidence. Profile pages, event trackers, mock-only landing pages and unmodified templates are not project additions.
+
+### Verification
+
+The resource-count helper reports **264 resource-bullet entries overall, including 149 Hack Apertus entries** (262 and 148 before this pass). The targeted link helper checked the two added README destinations, the refreshed research entry and the newly linked deferred candidate: four reachable, no likely broken links and no inconclusive results. Entry uniqueness, local document targets, README contents anchors, table structure and `git diff --check` passed. Applications, model inference and benchmark reproduction were not run; no GitHub publication was requested.
