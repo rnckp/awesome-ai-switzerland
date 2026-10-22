@@ -1,8 +1,8 @@
-title: Awesome Swiss AI
+title: Awesome AI Switzerland
 description: Official resources, models, tools, integrations, and community projects for Apertus AI.
 url: https://rnckp.github.io
-baseurl: /awesome-swiss-ai
-repository: rnckp/awesome-swiss-ai
+baseurl: /awesome-ai-switzerland
+repository: rnckp/awesome-ai-switzerland
 theme: jekyll-theme-primer
 
 plugins:

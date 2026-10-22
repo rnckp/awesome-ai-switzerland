@@ -5,8 +5,8 @@ import unittest
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-from awesome_swiss_ai import count_sources as counter
-from awesome_swiss_ai import link_checker as checker
+from awesome_ai_switzerland import count_sources as counter
+from awesome_ai_switzerland import link_checker as checker
 
 
 class HelperTests(unittest.TestCase):

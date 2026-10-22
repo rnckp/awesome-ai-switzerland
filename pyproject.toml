@@ -23,8 +23,8 @@ build-backend = "setuptools.build_meta"
 where = ["src"]
 
 [project.scripts]
-count-sources = "awesome_swiss_ai.count_sources:main"
-check-links = "awesome_swiss_ai.link_checker:main"
+count-sources = "awesome_ai_switzerland.count_sources:main"
+check-links = "awesome_ai_switzerland.link_checker:main"
 
 [tool.ruff]
 target-version = "py313"

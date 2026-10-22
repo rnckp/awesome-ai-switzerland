@@ -1,6 +1,6 @@
 # Maintenance helpers
 
-The [main README](../README.md) is the Awesome Swiss AI directory. This small Python
+The [main README](../README.md) is the Awesome AI Switzerland directory. This small Python
 package contains its maintenance scripts.
 
 ## Setup and commands
@@ -19,13 +19,13 @@ make format        # Format Python files
 make help          # List all targets
 ```
 
-- `awesome_swiss_ai/count_sources.py` counts top-level resource bullets
+- `awesome_ai_switzerland/count_sources.py` counts top-level resource bullets
   with external Markdown links under level-two headings, grouped by section
   and heading path. Secondary links, nested
   bullets, table rows and fenced examples do not add entries. The model table
   is therefore excluded from the counts. Separate cross-references
   count again; these are not counts of unique datasets or publishers.
-- `awesome_swiss_ai/link_checker.py` checks unique HTTP(S) URLs using HEAD
+- `awesome_ai_switzerland/link_checker.py` checks unique HTTP(S) URLs using HEAD
   with a streamed GET fallback. It reports reachable, likely broken (404/410)
   and `needs review` (inconclusive) results. It removes URL fragments before
   checking and does not validate local links, content or licenses.
