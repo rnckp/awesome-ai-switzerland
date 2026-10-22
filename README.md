@@ -29,7 +29,7 @@ A curated guide to [Apertus](https://www.apertus-ai.org/), the open multilingual
   <li><a href="#hack-apertus-projects">Hack Apertus projects</a>
     <ul>
       <li><a href="#liebefeld-on-site-projects">Liebefeld on-site projects</a></li>
-      <li><a href="#red-teaming-and-evaluation">Red-teaming and evaluation</a></li>
+      <li><a href="#evaluation">Evaluation</a></li>
       <li><a href="#document-understanding-and-grounded-answers">Document understanding and grounded answers</a></li>
       <li><a href="#robotics-and-mission-planning">Robotics and mission planning</a></li>
       <li><a href="#education-interviews-and-language">Education, interviews and language</a></li>
