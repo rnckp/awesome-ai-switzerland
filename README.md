@@ -10,7 +10,7 @@ A curated guide to [Apertus](https://www.apertus-ai.org/), the open multilingual
 
 > Independent, community-maintained list; not affiliated with, sponsored by, or endorsed by Apertus or its institutions. “Official” denotes resources from the Apertus team or Swiss AI.
 
-**List audit: October 20, 2026.** Last full ecosystem review: September 26, 2026; targeted additions through October 22. See [research notes](RESEARCH.md) for dated evidence and verification limits.
+**List audit: October 20, 2026.** Last full ecosystem review: September 26, 2026; targeted additions through October 22.
 
 <details>
 <summary><strong>Table of Contents</strong></summary>
@@ -272,11 +272,11 @@ Sources: official [directory](https://apertus-ai.org/pages/get-started/), [ecosy
 
 ## Hack Apertus projects
 
-Selected projects from [Hack Apertus](https://hackapertus.ch/), reviewed October 9–22, 2026. Inclusion requires an explicit code licence, project-specific documentation, substantive implementation and concrete Apertus use. These are community prototypes and research tools; software and reported results were not independently tested. See the [selection notes](RESEARCH.md#selection-decisions) for decisions and open verification issues.
+Selected projects from [Hack Apertus](https://hackapertus.ch/), reviewed October 9–22, 2026. Inclusion requires an explicit code licence, project-specific documentation, substantive implementation and concrete Apertus use. These are community prototypes and research tools; software and reported results were not independently tested.
 
 **Code is Apache-2.0 unless stated otherwise.** Datasets, models, dependencies and source materials retain their own terms; licence notices without bundled licence text are identified separately.
 
-The online round closed on **October 16, 2026**; the separate [Liebefeld on-site event](https://hackapertus.ch/regions/bern-liebefeld) ran on **October 18–19**. The organizer [confirms ArchAI (team EDUCATION) as the Liebefeld winner](https://www.linkedin.com/posts/hack-apertus_spotlight-on-for-the-winner-of-the-first-activity-7518206147535896576-Kmml). A [jury announcement](https://www.linkedin.com/posts/susie-xi-rao-a0199b15b_apertus-siliconlovefield-activity-7518031548185493504-F0oP) has an indexed excerpt reporting Stregoni/B2Bern in third place; its current body omits the runners-up, so that placing remains qualified (see [award notes](RESEARCH.md#hack-apertus-follow-up--october-21-2026)). Checked **October 21**. [Devpost rules](https://hackapertus.devpost.com/rules) estimate the online winners announcement at **12:00 CEST on October 23, 2026**, subject to change. Note that this list is independent and community-run and in no way associated with the offical organisations. Directory inclusion therefore does not establish anything (e.g. submission acceptance, award etc).
+The online round closed on **October 16, 2026**; the separate [Liebefeld on-site event](https://hackapertus.ch/regions/bern-liebefeld) ran on **October 18–19**. The organizer [confirms ArchAI (team EDUCATION) as the Liebefeld winner](https://www.linkedin.com/posts/hack-apertus_spotlight-on-for-the-winner-of-the-first-activity-7518206147535896576-Kmml). A [jury announcement](https://www.linkedin.com/posts/susie-xi-rao-a0199b15b_apertus-siliconlovefield-activity-7518031548185493504-F0oP) has an indexed excerpt reporting Stregoni/B2Bern in third place; its current body omits the runners-up, so that placing remains qualified. Checked **October 21**. [Devpost rules](https://hackapertus.devpost.com/rules) estimate the online winners announcement at **12:00 CEST on October 23, 2026**, subject to change. Note that this list is independent and community-run and in no way associated with the offical organisations. Directory inclusion therefore does not establish anything (e.g. submission acceptance, award etc).
 
 ### Liebefeld on-site projects
 
