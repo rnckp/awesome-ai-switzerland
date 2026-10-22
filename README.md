@@ -1,10 +1,10 @@
-# Awesome Swiss AI
+# Awesome AI Switzerland
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![Suggestions welcome](https://img.shields.io/badge/suggestions-welcome-brightgreen)](https://github.com/rnckp/awesome-swiss-ai/issues/new)
+[![Suggestions welcome](https://img.shields.io/badge/suggestions-welcome-brightgreen)](https://github.com/rnckp/awesome-ai-switzerland/issues/new)
 [![License: CC0](https://img.shields.io/badge/license-CC0-blue)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/rnckp/awesome-swiss-ai.svg)](https://github.com/rnckp/awesome-swiss-ai)
-[![Last commit](https://img.shields.io/github/last-commit/rnckp/awesome-swiss-ai)](https://github.com/rnckp/awesome-swiss-ai/commits/main/)
+[![GitHub Stars](https://img.shields.io/github/stars/rnckp/awesome-ai-switzerland.svg)](https://github.com/rnckp/awesome-ai-switzerland)
+[![Last commit](https://img.shields.io/github/last-commit/rnckp/awesome-ai-switzerland)](https://github.com/rnckp/awesome-ai-switzerland/commits/main/)
 
 A curated guide to [Apertus](https://www.apertus-ai.org/), the open multilingual model family from the [Swiss AI Initiative](https://www.swiss-ai.org/), developed by EPFL, ETH Zurich, and CSCS. Official models, reproducibility resources, tools, integrations, and community projects.
 
@@ -69,16 +69,16 @@ A curated guide to [Apertus](https://www.apertus-ai.org/), the open multilingual
 
 Use each model card for capabilities, access conditions, and installation instructions. Base checkpoints are intended for completion or further training; Instruct checkpoints are adapted for conversation.
 
-| Family | Official weights | Purpose |
-| --- | --- | --- |
-| **Apertus 1.5** | [8B](https://huggingface.co/swiss-ai/Apertus-v1.5-8B) · [70B](https://huggingface.co/swiss-ai/Apertus-v1.5-70B) · [collection](https://huggingface.co/collections/swiss-ai/apertus-v15) | Text and image input, experimental audio input, optional thinking; up to 262,144 tokens. Text output. |
-| **1.5 — long-context base** | [8B](https://huggingface.co/swiss-ai/Apertus-v1.5-8B-base) · [70B](https://huggingface.co/swiss-ai/Apertus-v1.5-70B-base) | Pretraining checkpoints for completion or further training; no chat template. |
+| Family                               | Official weights                                                                                                                                                                                                                                                                                                              | Purpose                                                                                                |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **Apertus 1.5**                      | [8B](https://huggingface.co/swiss-ai/Apertus-v1.5-8B) · [70B](https://huggingface.co/swiss-ai/Apertus-v1.5-70B) · [collection](https://huggingface.co/collections/swiss-ai/apertus-v15)                                                                                                                                       | Text and image input, experimental audio input, optional thinking; up to 262,144 tokens. Text output.  |
+| **1.5 — long-context base**          | [8B](https://huggingface.co/swiss-ai/Apertus-v1.5-8B-base) · [70B](https://huggingface.co/swiss-ai/Apertus-v1.5-70B-base)                                                                                                                                                                                                     | Pretraining checkpoints for completion or further training; no chat template.                          |
 | **1.5 — intermediate post-training** | [8B SFT](https://huggingface.co/swiss-ai/Apertus-v1.5-8B-SFT) · [70B SFT](https://huggingface.co/swiss-ai/Apertus-v1.5-70B-SFT) · [8B RL](https://huggingface.co/swiss-ai/Apertus-v1.5-8B-RL) · [70B RL](https://huggingface.co/swiss-ai/Apertus-v1.5-70B-RL) · [8B DPO](https://huggingface.co/swiss-ai/Apertus-v1.5-8B-DPO) | Training-stage checkpoints for studying behavior changes; access conditions and pinned runtimes apply. |
-| **1.1 Mini — base** | [0.5B](https://huggingface.co/swiss-ai/Apertus-v1.1-0.5B) · [1.5B](https://huggingface.co/swiss-ai/Apertus-v1.1-1.5B) · [4B](https://huggingface.co/swiss-ai/Apertus-v1.1-4B) | Smaller distilled text models. |
-| **1.1 Mini — Instruct** | [0.5B](https://huggingface.co/swiss-ai/Apertus-v1.1-0.5B-Instruct) · [1.5B](https://huggingface.co/swiss-ai/Apertus-v1.1-1.5B-Instruct) · [4B](https://huggingface.co/swiss-ai/Apertus-v1.1-4B-Instruct) | Compact conversational models. |
-| **1.1 Mini — quantized** | [Collection](https://huggingface.co/collections/swiss-ai/apertus-mini) · [vLLM NVFP4A16 1.5B](https://huggingface.co/swiss-ai/Apertus-v1.1-1.5B-Instruct-vLLM-NVFP4A16) | Official MLX INT3/INT4/INT6 variants at all three sizes, plus the vLLM build. |
-| **1.0 — base** | [8B](https://huggingface.co/swiss-ai/Apertus-8B-2509) · [70B](https://huggingface.co/swiss-ai/Apertus-70B-2509) | Original September 2025 text checkpoints. |
-| **1.0 — Instruct** | [8B](https://huggingface.co/swiss-ai/Apertus-8B-Instruct-2509) · [70B](https://huggingface.co/swiss-ai/Apertus-70B-Instruct-2509) · [collection](https://huggingface.co/collections/swiss-ai/apertus-v1) | Original chat models; 65,536-token context. |
+| **1.1 Mini — base**                  | [0.5B](https://huggingface.co/swiss-ai/Apertus-v1.1-0.5B) · [1.5B](https://huggingface.co/swiss-ai/Apertus-v1.1-1.5B) · [4B](https://huggingface.co/swiss-ai/Apertus-v1.1-4B)                                                                                                                                                 | Smaller distilled text models.                                                                         |
+| **1.1 Mini — Instruct**              | [0.5B](https://huggingface.co/swiss-ai/Apertus-v1.1-0.5B-Instruct) · [1.5B](https://huggingface.co/swiss-ai/Apertus-v1.1-1.5B-Instruct) · [4B](https://huggingface.co/swiss-ai/Apertus-v1.1-4B-Instruct)                                                                                                                      | Compact conversational models.                                                                         |
+| **1.1 Mini — quantized**             | [Collection](https://huggingface.co/collections/swiss-ai/apertus-mini) · [vLLM NVFP4A16 1.5B](https://huggingface.co/swiss-ai/Apertus-v1.1-1.5B-Instruct-vLLM-NVFP4A16)                                                                                                                                                       | Official MLX INT3/INT4/INT6 variants at all three sizes, plus the vLLM build.                          |
+| **1.0 — base**                       | [8B](https://huggingface.co/swiss-ai/Apertus-8B-2509) · [70B](https://huggingface.co/swiss-ai/Apertus-70B-2509)                                                                                                                                                                                                               | Original September 2025 text checkpoints.                                                              |
+| **1.0 — Instruct**                   | [8B](https://huggingface.co/swiss-ai/Apertus-8B-Instruct-2509) · [70B](https://huggingface.co/swiss-ai/Apertus-70B-Instruct-2509) · [collection](https://huggingface.co/collections/swiss-ai/apertus-v1)                                                                                                                      | Original chat models; 65,536-token context.                                                            |
 
 Supporting models: [pretraining toxicity classifier](https://huggingface.co/swiss-ai/apertus-pretrain-toxicity) and [WavTokenizer checkpoint](https://huggingface.co/swiss-ai/wavtokenizer-large-unify-40token).
 
@@ -177,18 +177,18 @@ Supporting models: [pretraining toxicity classifier](https://huggingface.co/swis
 
 ## Local inference and serving
 
-| Tool | Apertus resources | Notes |
-| --- | --- | --- |
-| Transformers | [Official guide](https://apertus-ai.org/docs/guides/transformers/) · [upstream model docs](https://huggingface.co/docs/transformers/model_doc/apertus) · [Swiss AI fork](https://github.com/swiss-ai/transformers) | Python loading; full multimodal 1.5 requires the model card's pinned fork. |
-| vLLM | [Official guide](https://apertus-ai.org/docs/guides/vllm/) · [1.5 instructions](https://huggingface.co/swiss-ai/Apertus-v1.5-70B#how-to-use) · [Swiss AI fork](https://github.com/swiss-ai/vllm) · [integration work](https://github.com/swiss-ai/vllm-apertus-integration) | GPU serving; use the prescribed revisions, parsers and containers. |
-| SGLang | [Official guide](https://apertus-ai.org/docs/guides/sglang/) · [Swiss AI fork](https://github.com/swiss-ai/sglang) · [sglang-apertus](https://github.com/swiss-ai/sglang-apertus) · [Scratchpad](https://github.com/swiss-ai/Scratchpad) | Original-model examples; 1.5 integration remains work in progress. |
-| llama.cpp | [Upstream](https://github.com/ggml-org/llama.cpp) · [experimental 1.5 branch](https://github.com/MichelRosselli/llama.cpp/tree/model/apertus-v1.5) · [maintainer discussion](https://huggingface.co/swiss-ai/Apertus-v1.5-8B/discussions/6) | Experimental full 1.5 support: author-tested 8B; 70B unvalidated. |
-| Ollama | [Official guide](https://apertus-ai.org/docs/user/ollama/) · [1.0 package](https://ollama.com/MichelRosselli/apertus) · [Mini package](https://ollama.com/MichelRosselli/apertus-v1.1) | Community-maintained packages. |
-| LM Studio | [Official guide](https://apertus-ai.org/docs/user/lmstudio/) | Desktop UI for compatible local builds. |
-| Llamafile | [Official guide](https://apertus-ai.org/docs/user/llamafile/) | Package compatible GGUF models as executables. |
-| Open WebUI | [Official guide](https://apertus-ai.org/docs/user/openwebui/) | Chat frontend for local or hosted inference. |
-| MLX | [Official Mini collection](https://huggingface.co/collections/swiss-ai/apertus-mini) · [community 1.0 8B BF16](https://huggingface.co/mlx-community/Apertus-8B-Instruct-2509-bf16) · [1.5 builds below](#alternative-formats) | Apple Silicon inference; full multimodal 1.5 requires an experimental mlx-vlm build. |
-| Transformers.js / WebGPU | [Mini demo and source](https://huggingface.co/spaces/swiss-ai/apertus-mini-webgpu) | Browser-local inference with converted Mini weights. |
+| Tool                     | Apertus resources                                                                                                                                                                                                                                                           | Notes                                                                                |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Transformers             | [Official guide](https://apertus-ai.org/docs/guides/transformers/) · [upstream model docs](https://huggingface.co/docs/transformers/model_doc/apertus) · [Swiss AI fork](https://github.com/swiss-ai/transformers)                                                          | Python loading; full multimodal 1.5 requires the model card's pinned fork.           |
+| vLLM                     | [Official guide](https://apertus-ai.org/docs/guides/vllm/) · [1.5 instructions](https://huggingface.co/swiss-ai/Apertus-v1.5-70B#how-to-use) · [Swiss AI fork](https://github.com/swiss-ai/vllm) · [integration work](https://github.com/swiss-ai/vllm-apertus-integration) | GPU serving; use the prescribed revisions, parsers and containers.                   |
+| SGLang                   | [Official guide](https://apertus-ai.org/docs/guides/sglang/) · [Swiss AI fork](https://github.com/swiss-ai/sglang) · [sglang-apertus](https://github.com/swiss-ai/sglang-apertus) · [Scratchpad](https://github.com/swiss-ai/Scratchpad)                                    | Original-model examples; 1.5 integration remains work in progress.                   |
+| llama.cpp                | [Upstream](https://github.com/ggml-org/llama.cpp) · [experimental 1.5 branch](https://github.com/MichelRosselli/llama.cpp/tree/model/apertus-v1.5) · [maintainer discussion](https://huggingface.co/swiss-ai/Apertus-v1.5-8B/discussions/6)                                 | Experimental full 1.5 support: author-tested 8B; 70B unvalidated.                    |
+| Ollama                   | [Official guide](https://apertus-ai.org/docs/user/ollama/) · [1.0 package](https://ollama.com/MichelRosselli/apertus) · [Mini package](https://ollama.com/MichelRosselli/apertus-v1.1)                                                                                      | Community-maintained packages.                                                       |
+| LM Studio                | [Official guide](https://apertus-ai.org/docs/user/lmstudio/)                                                                                                                                                                                                                | Desktop UI for compatible local builds.                                              |
+| Llamafile                | [Official guide](https://apertus-ai.org/docs/user/llamafile/)                                                                                                                                                                                                               | Package compatible GGUF models as executables.                                       |
+| Open WebUI               | [Official guide](https://apertus-ai.org/docs/user/openwebui/)                                                                                                                                                                                                               | Chat frontend for local or hosted inference.                                         |
+| MLX                      | [Official Mini collection](https://huggingface.co/collections/swiss-ai/apertus-mini) · [community 1.0 8B BF16](https://huggingface.co/mlx-community/Apertus-8B-Instruct-2509-bf16) · [1.5 builds below](#alternative-formats)                                               | Apple Silicon inference; full multimodal 1.5 requires an experimental mlx-vlm build. |
+| Transformers.js / WebGPU | [Mini demo and source](https://huggingface.co/spaces/swiss-ai/apertus-mini-webgpu)                                                                                                                                                                                          | Browser-local inference with converted Mini weights.                                 |
 
 ## Community quantizations and derivatives
 
@@ -202,11 +202,11 @@ Supporting models: [pretraining toxicity classifier](https://huggingface.co/swis
 
 **1.0 Instruct GGUF conversions:**
 
-| Maintainer | 8B | 70B | Notes |
-| --- | --- | --- | --- |
-| Unsloth | [GGUF](https://huggingface.co/unsloth/Apertus-8B-Instruct-2509-GGUF) | [GGUF](https://huggingface.co/unsloth/Apertus-70B-Instruct-2509-GGUF) | Also [8B bitsandbytes 4-bit](https://huggingface.co/unsloth/Apertus-8B-Instruct-2509-unsloth-bnb-4bit). |
-| Bartowski | [GGUF](https://huggingface.co/bartowski/swiss-ai_Apertus-8B-Instruct-2509-GGUF) | [GGUF](https://huggingface.co/bartowski/swiss-ai_Apertus-70B-Instruct-2509-GGUF) | Alternative quantizations. |
-| redponike | [GGUF](https://huggingface.co/redponike/Apertus-8B-Instruct-2509-GGUF) | [GGUF](https://huggingface.co/redponike/Apertus-70B-Instruct-2509-GGUF) | Linked by the official Ollama guide. |
+| Maintainer | 8B                                                                              | 70B                                                                              | Notes                                                                                                   |
+| ---------- | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Unsloth    | [GGUF](https://huggingface.co/unsloth/Apertus-8B-Instruct-2509-GGUF)            | [GGUF](https://huggingface.co/unsloth/Apertus-70B-Instruct-2509-GGUF)            | Also [8B bitsandbytes 4-bit](https://huggingface.co/unsloth/Apertus-8B-Instruct-2509-unsloth-bnb-4bit). |
+| Bartowski  | [GGUF](https://huggingface.co/bartowski/swiss-ai_Apertus-8B-Instruct-2509-GGUF) | [GGUF](https://huggingface.co/bartowski/swiss-ai_Apertus-70B-Instruct-2509-GGUF) | Alternative quantizations.                                                                              |
+| redponike  | [GGUF](https://huggingface.co/redponike/Apertus-8B-Instruct-2509-GGUF)          | [GGUF](https://huggingface.co/redponike/Apertus-70B-Instruct-2509-GGUF)          | Linked by the official Ollama guide.                                                                    |
 
 ### Fine-tunes and adaptations
 
@@ -227,17 +227,17 @@ Supporting models: [pretraining toxicity classifier](https://huggingface.co/swis
 
 Sources: official [directory](https://apertus-ai.org/pages/get-started/), [ecosystem review](https://apertus-ai.org/articles/2026-09-apertus-1-5-ga/) and provider catalogs. Check each provider for current versions, modalities, context limits and pricing.
 
-| Provider | Resources | Access |
-| --- | --- | --- |
-| Swisscom | [Apertus 1.5 70B docs](https://docs.cloud.swisscom.ch/guide/cloud-services/aip/models/apertus-1_5_70B) | Swiss AI Platform API. |
-| Infomaniak | [AI Services catalog](https://www.infomaniak.com/en/hosting/ai-services/open-source-models) | Swiss-hosted API; lists 1.5 70B as beta. |
-| PHOENIQS / KVANT | [Active models](https://documentation.kvant.cloud/maas/active-models/) | Enterprise model service. |
-| Safe Swiss Cloud | [Private AI](https://safeswisscloud.com/en/private-ai/) | Managed private AI; lists 1.5 70B. |
-| stepping stone | [AI on demand](https://www.stepping-stone.ch/en/products/artificial-intelligence/ai-on-demand-powered-by-swiss-ai-initiative) · [deployment notes](https://wiki.stoney-cloud.com/wiki/AI_on_demand:_apertus-ai/Apertus-v1.5-8B) | Managed 1.5 8B service. |
-| Public AI | [Chat](https://publicai.co/) · [developer platform](https://platform.publicai.co/) · [API reference](https://platform.publicai.co/api) · [Hugging Face integration](https://huggingface.co/docs/inference-providers/providers/publicai) | Hosted chat and API. |
-| Featherless | [Apertus catalog](https://featherless.ai/models?families=apertus) · [deployment guide](https://apertus-ai.org/docs/deploy/featherless/) | Serverless inference. |
-| Regolo | [Apertus model page](https://regolo.ai/models-archive/apertus-70b-2509/) | Original 70B via `apertus-70b`. |
-| OnPrem AI | [Model catalog](https://www.onprem.ai/en/ai-llm-models/) | On-premise enterprise deployment and support. |
+| Provider         | Resources                                                                                                                                                                                                                               | Access                                        |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| Swisscom         | [Apertus 1.5 70B docs](https://docs.cloud.swisscom.ch/guide/cloud-services/aip/models/apertus-1_5_70B)                                                                                                                                  | Swiss AI Platform API.                        |
+| Infomaniak       | [AI Services catalog](https://www.infomaniak.com/en/hosting/ai-services/open-source-models)                                                                                                                                             | Swiss-hosted API; lists 1.5 70B as beta.      |
+| PHOENIQS / KVANT | [Active models](https://documentation.kvant.cloud/maas/active-models/)                                                                                                                                                                  | Enterprise model service.                     |
+| Safe Swiss Cloud | [Private AI](https://safeswisscloud.com/en/private-ai/)                                                                                                                                                                                 | Managed private AI; lists 1.5 70B.            |
+| stepping stone   | [AI on demand](https://www.stepping-stone.ch/en/products/artificial-intelligence/ai-on-demand-powered-by-swiss-ai-initiative) · [deployment notes](https://wiki.stoney-cloud.com/wiki/AI_on_demand:_apertus-ai/Apertus-v1.5-8B)         | Managed 1.5 8B service.                       |
+| Public AI        | [Chat](https://publicai.co/) · [developer platform](https://platform.publicai.co/) · [API reference](https://platform.publicai.co/api) · [Hugging Face integration](https://huggingface.co/docs/inference-providers/providers/publicai) | Hosted chat and API.                          |
+| Featherless      | [Apertus catalog](https://featherless.ai/models?families=apertus) · [deployment guide](https://apertus-ai.org/docs/deploy/featherless/)                                                                                                 | Serverless inference.                         |
+| Regolo           | [Apertus model page](https://regolo.ai/models-archive/apertus-70b-2509/)                                                                                                                                                                | Original 70B via `apertus-70b`.               |
+| OnPrem AI        | [Model catalog](https://www.onprem.ai/en/ai-llm-models/)                                                                                                                                                                                | On-premise enterprise deployment and support. |
 
 ### Deploy on your own cloud infrastructure
 
@@ -494,4 +494,4 @@ The online round closed on **October 16, 2026**; the separate [Liebefeld on-site
 - **Meet the community:** [Discord](https://discord.gg/t9TY8FsJd), linked in the official ecosystem post; [Swiss AI events](https://www.swiss-ai.org/events) and [Swiss AI Weeks](https://ai-weeks.ch/).
 - **Follow updates:** [Mastodon](https://fosstodon.org/@apertus), [LinkedIn](https://www.linkedin.com/company/apertus/), [X](https://x.com/apertusllm) and [Bluesky](https://bsky.app/profile/did:plc:ytwqtr3ykzq6nzr7kg2465ca).
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md), then suggest a resource with a primary source, short description and Apertus version. This list is [CC0 1.0](LICENSE); linked projects retain their own licenses. See the [helper documentation](https://github.com/rnckp/awesome-swiss-ai/blob/main/src/README.md) for maintenance commands.
+Read [CONTRIBUTING.md](CONTRIBUTING.md), then suggest a resource with a primary source, short description and Apertus version. This list is [CC0 1.0](LICENSE); linked projects retain their own licenses. See the [helper documentation](https://github.com/rnckp/awesome-ai-switzerland/blob/main/src/README.md) for maintenance commands.

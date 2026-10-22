@@ -1,7 +1,7 @@
 [project]
-name = "awesome-swiss-ai"
+name = "awesome-ai-switzerland"
 version = "0.1.0"
-description = "Maintenance helpers for the awesome-swiss-ai directory"
+description = "Maintenance helpers for the awesome-ai-switzerland directory"
 readme = "README.md"
 authors = [
     { name = "Patrick Arnecke", email = "mail@arnecke.ch" }
