@@ -306,7 +306,7 @@ The online round closed on **October 16, 2026**; the separate [Liebefeld on-site
 - [Querschnitt](https://github.com/mi11ione/querschnitt) — OpenParlData topic classification with APS/custom schemes, source-sentence evidence, review lanes and evaluation artifacts. The measured method requires endpoint log-probabilities and assistant prefill.
 - [Unisono](https://github.com/Dinesh18S/parltopics) — Swiss parliamentary-topic classification with supporting sentences, search and human review; disclosed recall and long-document failures limit completeness.
 
-### Red-teaming and evaluation
+### Evaluation
 
 #### Swiss factuality and legal benchmarks
 
