@@ -40,7 +40,8 @@ jobs:
           test -s _site/index.html
           test -s _site/assets/css/style.css
           grep -Fq "href=\"${PAGES_BASE_PATH}/assets/css/style.css" _site/index.html
-          test -s _site/RESEARCH.html
+          test ! -e _site/RESEARCH.html
+          test ! -e _site/RESEARCH.md
           test -s _site/CONTRIBUTING.html
           test -s _site/LICENSE
           grep -q 'id="official-models"' _site/index.html

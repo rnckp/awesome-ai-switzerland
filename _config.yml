@@ -32,6 +32,7 @@ defaults:
       permalink: /
 
 exclude:
+  - RESEARCH.md
   - .agent
   - AGENTS.md
   - src
