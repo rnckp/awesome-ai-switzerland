@@ -18,4 +18,5 @@ dist/
 
 .DS_Store
 RESEARCH.md
-/REFACTOR.md
+REFACTOR.md
+.devcontainer/
