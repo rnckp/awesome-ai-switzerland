@@ -2,6 +2,9 @@ version = 1
 revision = 5
 requires-python = ">=3.13"
 
+[manifest]
+constraints = [{ name = "certifi", specifier = ">=2026.10.19" }]
+
 [[package]]
 name = "awesome-ai-switzerland"
 version = "0.1.0"
