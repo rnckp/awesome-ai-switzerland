@@ -10,7 +10,7 @@ A curated guide to [Apertus](https://www.apertus-ai.org/), the open multilingual
 
 > Independent, community-maintained list; not affiliated with, sponsored by, or endorsed by Apertus or its institutions. “Official” denotes resources from the Apertus team or Swiss AI.
 
-**List audit: October 20, 2026.** Last full ecosystem review: September 26, 2026; targeted additions through October 24.
+**List audit: October 20, 2026.** Last full ecosystem review: September 26, 2026; targeted additions through November 8.
 
 <details>
 <summary><strong>Table of Contents</strong></summary>
@@ -82,7 +82,7 @@ Use each model card for capabilities, access conditions, and installation instru
 
 Supporting models: [pretraining toxicity classifier](https://huggingface.co/swiss-ai/apertus-pretrain-toxicity) and [WavTokenizer checkpoint](https://huggingface.co/swiss-ai/wavtokenizer-large-unify-40token).
 
-**Version matters:** 1.5 requires accepting access conditions and using custom Transformers/vLLM builds; tool calling is unsupported in thinking mode. Follow the authored [1.5 usage instructions](https://huggingface.co/swiss-ai/Apertus-v1.5-8B#how-to-use), checked October 20, 2026. Support for 1.0 does not imply support for 1.5.
+**Version matters:** 1.5 requires accepting access conditions and using custom Transformers/vLLM builds; tool calling is unsupported in thinking mode. Follow the authored [1.5 usage instructions](https://huggingface.co/swiss-ai/Apertus-v1.5-8B#how-to-use), checked November 8, 2026. Support for 1.0 does not imply support for 1.5.
 
 ## Official code and training infrastructure
 
@@ -155,6 +155,8 @@ Supporting models: [pretraining toxicity classifier](https://huggingface.co/swis
 ### Research projects
 
 - [Who Gets Help First?](https://github.com/uomoathens/who-gets-help-first) — Counterfactual flood-response decision audit in Greek, French and English, with recorded Apertus 1.0 8B and comparison-model runs, controls and analysis. MIT code; study results are provisional and synthetic scenarios were not validated by emergency services.
+- [MSafeTemp](https://github.com/swiss-ai/msafetemp) — Multilingual safety-data augmentation, evaluation and Apertus training recipes, with a [60-language dataset](https://huggingface.co/datasets/swiss-ai/MSafeTemp) and [paper](https://arxiv.org/abs/2610.40516). MIT code and Apache-2.0 dataset.
+- [Forking Paths / Rozcestí](https://github.com/josefslerka/forking-paths) — Local research workbench for token probabilities, surprisal, context comparisons and model interventions, with Apertus and EuroLLM backends. Apache-2.0. Demo values are synthetic and optional calibrated addons are not bundled.
 - [ONWARD degeneration probes](https://github.com/swiss-ai/degeneration-probe) — Degeneration-onset datasets, hidden-state probes and false-alarm evaluation for original Apertus 8B Instruct and comparison models; [released probes](https://huggingface.co/collections/marcodene/onward-degeneration-probes). Research tooling, not a validated deployment safeguard.
 - [SFT Data Scorer](https://github.com/aebelge/sftdashboard) — Dataset inspection, annotation and score-based selection dashboard with Apertus 1.5 dataset/scoring adapters. Research prototype; default scores are synthetic fixtures. MIT.
 - [apertus-probes](https://github.com/swiss-ai/apertus-probes) — Hallucination probes and activation analysis.
@@ -190,6 +192,8 @@ Supporting models: [pretraining toxicity classifier](https://huggingface.co/swis
 | Open WebUI               | [Official guide](https://apertus-ai.org/docs/user/openwebui/)                                                                                                                                                                                                               | Chat frontend for local or hosted inference.                                         |
 | MLX                      | [Official Mini collection](https://huggingface.co/collections/swiss-ai/apertus-mini) · [community 1.0 8B BF16](https://huggingface.co/mlx-community/Apertus-8B-Instruct-2509-bf16) · [1.5 builds below](#alternative-formats)                                               | Apple Silicon inference; full multimodal 1.5 requires an experimental mlx-vlm build. |
 | Transformers.js / WebGPU | [Mini demo and source](https://huggingface.co/spaces/swiss-ai/apertus-mini-webgpu)                                                                                                                                                                                          | Browser-local inference with converted Mini weights.                                 |
+
+- [EAGLE-3 for Apertus 1.5 70B](https://github.com/ninabot-ch/apertus-eagle3) — Pinned vLLM patch helper and measurement scripts for a [gated draft head](https://huggingface.co/ninabot/Apertus-v1.5-70B-EAGLE3). Apache-2.0. Experimental W4A16/TP4 setup, with a head trained on a fine-tune and small reported measurement samples.
 
 ## Community quantizations and derivatives
 
@@ -257,7 +261,8 @@ Sources: official [directory](https://apertus-ai.org/pages/get-started/), [ecosy
 - [Lumo by Proton](https://proton.me/blog/lumo-apertus-partnership) — Assistant with Apertus 1.5 selection.
 - [Euria](https://www.infomaniak.com/en/euria) — Infomaniak assistant with Apertus selection; [setup and kSuite integration](https://www.infomaniak.com/en/support/faq/2924/discover-euria-and-the-apertus-model).
 - [Helvetra](https://helvetra.ch/) — Swiss-language translation; [backend source](https://github.com/Helvetra/backend).
-- [AI Potluck](https://www.aipotluck.org/chat) — Alpha chat with inference traces; the [project](https://www.aipotluck.org/) names Apertus as its foundation, while the example trace uses Mistral.
+- [AI Potluck](https://www.aipotluck.org/chat) — Alpha chat with Apertus 1.5 routing and per-answer model/provider provenance. The [published source snapshot](https://github.com/currentai-org/alpha) includes chat and agent services. MIT code, with Apache-2.0 chat-ui-derived files and hosted-service dependencies.
+- [AskCH](https://github.com/xLongLink/askch) — Apertus 1.5 70B chat with an Infomaniak-backed agent, Swiss-service MCP tools and streamed tool traces. MIT prototype. Provider credentials are required and hosted-service claims were not independently verified.
 - [Open Data Editor](https://opendataeditor.okfn.org/) — Tabular-data editor with local AI; [source](https://github.com/okfn/opendataeditor) defaults to original Apertus 8B GGUF.
 - [ZüriCityGPT OSS](https://oss.zuericitygpt.ch/) — Liip's Apertus-backed RAG demo over Zurich city website content.
 
@@ -265,6 +270,7 @@ Sources: official [directory](https://apertus-ai.org/pages/get-started/), [ecosy
 
 - [LiteLLM PublicAI provider](https://docs.litellm.ai/docs/providers/publicai) — Apertus routes for the Python SDK and proxy.
 - [llm-public-ai](https://github.com/simonw/llm-public-ai) — Public AI provider plugin for Simon Willison’s LLM CLI/Python library, with Apertus model discovery, streaming and separation of 1.5 thinking output; endpoint capabilities vary by model.
+- [Baudrier](https://github.com/babutxa/baudrier) — Educational Apertus agent loop with weather and workspace-file tools, local text-only MLX conversion and remote 1.5 70B support. MIT. Examples document tool-format and reasoning failures.
 - [Laravel Apertus](https://github.com/mmorand/laravel-apertus) — PHP/Laravel client with streaming and model listing.
 - [ApertusSharp](https://github.com/bhrnjica/ApertusSharp) — .NET client using Microsoft.Extensions.AI, with Semantic Kernel integration.
 - [Apertus n8n starter kit](https://github.com/aai-institute/apertus-n8n) — Python/curl extraction examples, three n8n workflows and local Ollama support; local tool calling is unsupported by the packaged model.
@@ -275,11 +281,11 @@ Sources: official [directory](https://apertus-ai.org/pages/get-started/), [ecosy
 
 ## Hack Apertus projects
 
-Selected projects from [Hack Apertus](https://hackapertus.ch/), reviewed October 9–24, 2026. Inclusion requires an explicit code licence, project-specific documentation, substantive implementation and concrete Apertus use. These are community prototypes and research tools; software and reported results were not independently tested.
+Selected projects from [Hack Apertus](https://hackapertus.ch/), reviewed October 9–November 8, 2026. Inclusion requires an explicit code licence, project-specific documentation, substantive implementation and concrete Apertus use. These are community prototypes and research tools; software and reported results were not independently tested.
 
 **Code is Apache-2.0 unless stated otherwise.** Datasets, models, dependencies and source materials retain their own terms; licence notices without bundled licence text are identified separately.
 
-The online round closed on **October 16, 2026**; the separate [Liebefeld on-site event](https://hackapertus.ch/regions/bern-liebefeld) ran on **October 18–19**. The [published Liebefeld results](https://app.sprintd.org/events/hack-apertus-liebefeld) identify **ArchAI / EDUCATION first, B2Bern / Stregoni second, and Parlamentsthemen / Invincibles third**. Online awards were [announced on October 23](https://www.linkedin.com/posts/hack-apertus_get-readyyyyyyyy-for-our-winners-of-the-activity-7519381429147848704-EwYT); verified placements are noted beside the mapped projects. Checked **October 24, 2026**. Note that this list is independent and community-run and in no way associated with the offical organisations. Directory inclusion therefore does not establish anything (e.g. submission acceptance, award etc).
+The online round closed on **October 16, 2026**; the separate [Liebefeld on-site event](https://hackapertus.ch/regions/bern-liebefeld) ran on **October 18–19**. The [published Liebefeld results](https://app.sprintd.org/events/hack-apertus-liebefeld) identify **ArchAI / EDUCATION first, B2Bern / Stregoni second, and Parlamentsthemen / Invincibles third**. Online awards were [announced on October 23](https://hackapertus.ch/online-hack); verified placements are noted beside the mapped projects. Checked **October 24, 2026**. Note that this list is independent and community-run and in no way associated with the offical organisations. Directory inclusion therefore does not establish anything (e.g. submission acceptance, award etc).
 
 ### Liebefeld on-site projects
 
@@ -321,6 +327,7 @@ The online round closed on **October 16, 2026**; the separate [Liebefeld on-site
 - [Swiss HVET Eval](https://github.com/wortgefecht/apertus-swiss-hvet-eval) — Swiss vocational-education factuality benchmark for Apertus 1.5 8B, with cited answers, human validation and automated judging.
 - [Swiss Newcomer QA](https://github.com/MidsummerYU/large-canele-model-1b) — Four-language Swiss administrative-procedure benchmark for Apertus 1.5 8B/70B, with ch.ch sources, recorded answers and replay scoring.
 - [Swiss Reality Check](https://github.com/bhuwanb23/apertus) — Swiss knowledge, values and Alemannic-dialect evaluation with source-backed items and Apertus 1.5 8B artifacts; no 70B comparison is published.
+- [Swiss Aargau Lucerne Legal QA](https://github.com/DanielaFshr/swiss-legal-ag-lu-qa) — Apertus 1.5 70B evaluation on German federal, Aargau and Lucerne law questions, with cited references, frozen responses and replayable scoring. Dataset: CDLA-Permissive-2.0. Single-curator and model-assisted adjudication limit ground-truth confidence.
 - [Swiss Statute QA](https://github.com/bisale24-ops/swiss-statute-qa) — Multilingual Swiss federal-law benchmark with cited answers, historical statute versions and recorded Apertus 1.5 responses. Dataset: CDLA-Permissive-2.0.
 - [SwissCivicQA-4L](https://github.com/Jann08/swisscivicqa/tree/main/track_1b) — **Online Track 1B runner-up, team Jann.** Swiss constitutional factuality benchmark in German, French, Italian and Romansh, with source-backed answers, recorded Apertus 1.5 8B responses and cross-language consistency scoring.
 
@@ -329,6 +336,7 @@ The online round closed on **October 16, 2026**; the separate [Liebefeld on-site
 - [AirPatch](https://github.com/AhaWissenschaft/airpatch) — Tests Apertus code proposals in offline containers against hidden programming tests, with recorded responses, replay tools and negative results.
 - [Apertus Red-Team Harness](https://github.com/devilking7x/apertus-redteam) — Seeded multilingual, prompt-injection and tool-use probes with response logs and heuristic scoring for human review.
 - [EpiTrace](https://github.com/wanshuzhang-story/epitrace-apertus) — Tests whether Apertus treats repeated claims as independent evidence, using synthetic dossiers, recorded 8B/70B responses and offline scoring.
+- [Apertus Choice Audit](https://github.com/ElmekaouiHaitham/apertus-track1a) — English/French/Arabic identity-cue and reasoning audit of Apertus 1.5 70B, with recorded responses, human review, CPU replay and a white-box supplement. Findings/data: CDLA-Permissive-2.0. Localised stimuli and corpus-tuned parsers limit comparisons.
 - [Arifi multilingual factuality probes](https://github.com/arifiarber-sYn/hackapertus-1a) — Apertus 1.5 8B cultural, historical, legal and synthetic-persona probes across Albanian, German, French, Italian and English, with recorded-response replay and a fingerprint-checked live mode; narrow cases and string-based scoring limit generalisation.
 - [K-Probe](https://github.com/iamhuman-cheolheelee/k-probe) — Korean factuality, cultural and safety probes with sourced cases, regex scoring, recorded Apertus 1.0/1.5 responses and a results dashboard. MIT.
 - [Spoken-request refusal study](https://github.com/nourseen6/hack-apertus-redteam) — Text versus synthetic-speech safety responses from Apertus 1.5 8B/70B, with collection, judging and audit tools; harmful raw answers are withheld.
@@ -423,6 +431,7 @@ The online round closed on **October 16, 2026**; the separate [Liebefeld on-site
 - [Checked rescue briefings](https://github.com/prakash-aryan/rescue-briefings-apertus) — Apertus 1.5 turns multilingual briefings into typed drone/ground-robot missions checked by deterministic rules. Simulated terrain and assumed operating limits; no physical or physics-engine validation.
 - [Grounded Intent](https://github.com/AS8148/grounded-intent) — Local workcell-image interpretation with open vision models, Apertus reasoning, checked pick/place plans and a browser review interface; does not control a robot.
 - [See It, Say It, Pick It — Asian Prompters](https://github.com/azamafridi23/see-it-say-it-pick-it-hack-apertus) — **Online Track 2A third place.** Object segmentation, scene graphs and Apertus planning/safety agents produce pick/place plans, clarification questions or refusals for the robotics challenge.
+- [See It, Say It, Pick It — Claw & Order](https://github.com/d-er/see-it-say-it-pick-it) — Open-model perception and scene geometry feed Apertus 1.5 8B pick/place reasoning, checked by rules and a bounded correction loop. Single-image geometry and development-set tuning limit validation. Challenge data: CC-BY-4.0.
 - [See It, Say It, Pick It — Gude2Learn](https://github.com/jdawnduan/Gude2Learn) — Local Ollama pipeline separating open-model perception from text-only Apertus planning, with geometric hints and saved response traces; held-out wording informed later rules.
 - [See It, Say It, Pick It — Nightcats](https://github.com/u826318/see-it-say-it-pick-it) — Local Apertus reasoning with open vision models, staged caches, action compilation and submitted development/held-out artifacts.
 - [See It, Say It, Pick It — Zemljic/Ryser](https://github.com/NoahZemljic/hack-apertus) — Apertus instruction parsing and planning with Qwen visual grounding, SAM segmentation and geometric scene graphs.
@@ -494,6 +503,7 @@ The online round closed on **October 16, 2026**; the separate [Liebefeld on-site
 
 ## Community and contributing
 
+- [Hack Apertus project catalog](https://github.com/HackApertus/projects) — Organizer-maintained repository links, reports and project metadata. The [project overview](https://hackapertus.ch/projects/overview) is the browsing entry point. Some listed repositories remain unavailable publicly.
 - **Discuss models:** official Hugging Face discussions for [1.5 8B](https://huggingface.co/swiss-ai/Apertus-v1.5-8B/discussions) and [70B](https://huggingface.co/swiss-ai/Apertus-v1.5-70B/discussions).
 - **Contact the team:** [contact page](https://apertus-ai.org/contact/), including showcase requests.
 - **Meet the community:** [Discord](https://discord.gg/t9TY8FsJd), linked in the official ecosystem post; [Swiss AI events](https://www.swiss-ai.org/events) and [Swiss AI Weeks](https://ai-weeks.ch/).
