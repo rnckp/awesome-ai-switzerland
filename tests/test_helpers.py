@@ -10,6 +10,14 @@ from awesome_ai_switzerland import link_checker as checker
 
 
 class HelperTests(unittest.TestCase):
+    def setUp(self):
+        sleep = patch.object(checker.time, "sleep")
+        sleep.start()
+        self.addCleanup(sleep.stop)
+        token = patch.object(checker, "github_token", return_value=None)
+        token.start()
+        self.addCleanup(token.stop)
+
     def test_counter_cli_accepts_input_and_output_paths(self):
         with tempfile.TemporaryDirectory() as temp:
             readme = Path(temp) / "directory.md"
@@ -148,6 +156,103 @@ Plain https://example.org/plain.
                 patch.object(checker.requests, "get", return_value=self.response(code)),
             ):
                 self.assertEqual(checker.check_url("https://example.org")[1], outcome)
+
+    def test_transient_error_is_retried(self):
+        with (
+            patch.object(
+                checker.requests,
+                "head",
+                side_effect=[self.response(504), self.response(200)],
+            ) as head,
+            patch.object(
+                checker.requests,
+                "get",
+                side_effect=[self.response(504)],
+            ),
+        ):
+            self.assertEqual(
+                checker.check_url("https://example.org")[1:3], ("reachable", 200)
+            )
+            self.assertEqual(head.call_count, 2)
+
+    def test_persistent_5xx_is_retried_then_needs_review(self):
+        with (
+            patch.object(
+                checker.requests, "head", return_value=self.response(504)
+            ) as head,
+            patch.object(checker.requests, "get", return_value=self.response(504)),
+        ):
+            self.assertEqual(
+                checker.check_url("https://example.org")[1:3], ("needs review", 504)
+            )
+            self.assertEqual(head.call_count, checker.MAX_ATTEMPTS)
+
+    def test_404_is_not_retried(self):
+        with (
+            patch.object(
+                checker.requests, "head", return_value=self.response(404)
+            ) as head,
+            patch.object(checker.requests, "get", return_value=self.response(404)),
+        ):
+            checker.check_url("https://example.org")
+            self.assertEqual(head.call_count, 1)
+
+    def test_github_5xx_is_resolved_through_api(self):
+        cases = [
+            ("https://github.com/org", 200, "users/org", "reachable"),
+            (
+                "https://github.com/org/repo/issues/1",
+                200,
+                "repos/org/repo",
+                "reachable",
+            ),
+            ("https://github.com/org/repo", 404, "repos/org/repo", "likely broken"),
+            ("https://github.com/org/repo", 403, "repos/org/repo", "needs review"),
+        ]
+        for url, api_code, api_path, outcome in cases:
+            with (
+                self.subTest(url=url, api_code=api_code),
+                patch.object(checker.requests, "head", return_value=self.response(504)),
+                patch.object(
+                    checker.requests,
+                    "get",
+                    side_effect=lambda target, **_: (
+                        MagicMock(status_code=api_code)
+                        if target.startswith(checker.GITHUB_API)
+                        else self.response(504)
+                    ),
+                ) as get,
+            ):
+                self.assertEqual(checker.check_url(url)[1], outcome)
+                api_urls = [
+                    c.args[0]
+                    for c in get.call_args_list
+                    if c.args[0].startswith(checker.GITHUB_API)
+                ]
+                self.assertEqual(set(api_urls), {f"{checker.GITHUB_API}/{api_path}"})
+
+    def test_github_tree_paths_try_ref_splits(self):
+        calls = []
+
+        def api(target, **_):
+            calls.append(target)
+            return MagicMock(status_code=200 if "ref=a%2Fb&" in target + "&" else 404)
+
+        with (
+            patch.object(checker.requests, "head", return_value=self.response(504)),
+            patch.object(
+                checker.requests,
+                "get",
+                side_effect=lambda t, **k: (
+                    api(t, **k)
+                    if t.startswith(checker.GITHUB_API)
+                    else self.response(504)
+                ),
+            ),
+        ):
+            result = checker.check_url("https://github.com/o/r/tree/a/b/dir")
+        self.assertEqual(result[1], "reachable")
+        self.assertIn(f"{checker.GITHUB_API}/repos/o/r/contents/dir?ref=a%2Fb", calls)
 
     def test_connection_failure_needs_review(self):
         with (

@@ -29,6 +29,11 @@ make help          # List all targets
   with a streamed GET fallback. It reports reachable, likely broken (404/410)
   and `needs review` (inconclusive) results. It removes URL fragments before
   checking and does not validate local links, content or licenses.
+  Timeouts, rate limits and 5xx responses are retried with backoff. github.com
+  often answers 504 under load, so such URLs are then verified through the
+  GitHub API instead (token from `GITHUB_TOKEN`, `GH_TOKEN` or `gh auth token`;
+  unauthenticated calls are limited to 60 per hour). For repository paths other
+  than `tree`/`blob`, only the repository's existence is verified.
   The command exits with status 1 for likely broken links or a missing input;
   inconclusive checks alone do not cause failure.
 

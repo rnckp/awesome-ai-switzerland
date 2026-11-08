@@ -1,12 +1,16 @@
 """Check README HTTP links, separating likely broken URLs from inconclusive checks."""
 
 import argparse
+import os
 import re
+import subprocess
+import time
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
+from functools import cache
 from html import unescape
 from pathlib import Path
-from urllib.parse import urldefrag, urlsplit
+from urllib.parse import quote, unquote, urldefrag, urlsplit
 
 import requests
 from rich.console import Console
@@ -15,7 +19,15 @@ from rich.progress import track
 console = Console()
 REQUEST_TIMEOUT = 30
 MAX_WORKERS = 10
+MAX_ATTEMPTS = 3
+RETRY_DELAY = 2
 USER_AGENT = "Mozilla/5.0 (compatible; Link-Checker/1.0)"
+GITHUB_API = "https://api.github.com"
+GITHUB_RESERVED = {
+    "about", "apps", "collections", "enterprise", "events", "explore",
+    "features", "issues", "login", "marketplace", "notifications", "orgs",
+    "pricing", "pulls", "search", "settings", "sponsors", "topics", "trending",
+}  # fmt: skip
 
 
 def extract_urls_from_markdown(file_path: Path) -> list[str]:
@@ -56,8 +68,8 @@ def classify_status(status_code: int) -> str:
     return "needs review"
 
 
-def check_url(url: str) -> tuple[str, str, int, str]:
-    """Return URL, outcome, HTTP code and explanation.
+def request_once(url: str) -> tuple[str, int, str]:
+    """Return outcome, HTTP code and explanation from one HEAD/GET pass.
 
     Retry failed HEAD checks with a streamed GET: some servers reject HEAD.
     Do not download response bodies (links can point at large datasets).
@@ -75,9 +87,8 @@ def check_url(url: str) -> tuple[str, str, int, str]:
                 code = response.status_code
                 outcome = classify_status(code)
             if outcome == "reachable":
-                return url, outcome, code, ""
+                return outcome, code, ""
             result = (
-                url,
                 outcome,
                 code,
                 {
@@ -89,17 +100,103 @@ def check_url(url: str) -> tuple[str, str, int, str]:
                 }.get(code, "Server or HTTP error; retry or check manually"),
             )
         except requests.exceptions.Timeout:
-            result = (url, "needs review", 0, "Timeout; retry later")
+            result = ("needs review", 0, "Timeout; retry later")
         except requests.exceptions.TooManyRedirects:
-            result = (url, "needs review", 0, "Redirect loop; check in a browser")
+            result = ("needs review", 0, "Redirect loop; check in a browser")
         except requests.exceptions.RequestException as error:
             result = (
-                url,
                 "needs review",
                 0,
                 f"Connection/request error: {type(error).__name__}",
             )
     return result
+
+
+def is_transient(outcome: str, code: int) -> bool:
+    """Timeouts, connection errors, rate limits and 5xx may succeed on retry."""
+    return outcome == "needs review" and (code == 0 or code == 429 or code >= 500)
+
+
+@cache
+def github_token() -> str | None:
+    """Token for the GitHub API: GITHUB_TOKEN, GH_TOKEN or `gh auth token`."""
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    if token:
+        return token
+    try:
+        result = subprocess.run(
+            ["gh", "auth", "token"], capture_output=True, text=True, timeout=10
+        )
+    except (OSError, subprocess.SubprocessError):
+        return None
+    return result.stdout.strip() or None if result.returncode == 0 else None
+
+
+def github_api_status(path: str) -> int | None:
+    headers = {"User-Agent": USER_AGENT, "Accept": "application/vnd.github+json"}
+    if token := github_token():
+        headers["Authorization"] = f"Bearer {token}"
+    try:
+        return requests.get(
+            f"{GITHUB_API}/{path}", timeout=REQUEST_TIMEOUT, headers=headers
+        ).status_code
+    except requests.exceptions.RequestException:
+        return None
+
+
+def check_github_api(url: str) -> tuple[str, int, str] | None:
+    """Verify github.com URLs through the API, which github.com's web frontend
+    often answers with 5xx under load. Return None if inconclusive.
+
+    Account and repository URLs are checked exactly. For other repository
+    paths only the repository is verified, except tree/blob paths, whose
+    path is looked up (the ref may contain slashes, so a few splits are tried).
+    """
+    split = urlsplit(url)
+    if split.netloc.lower() not in ("github.com", "www.github.com"):
+        return None
+    parts = [unquote(part) for part in split.path.split("/") if part]
+    if not parts or parts[0].lower() in GITHUB_RESERVED:
+        return None
+    owner = quote(parts[0])
+    if len(parts) == 1:
+        api_paths = [f"users/{owner}"]
+    else:
+        repo = f"repos/{owner}/{quote(parts[1])}"
+        api_paths = [repo]
+        if len(parts) > 3 and parts[2] in ("tree", "blob"):
+            refs = parts[3:]
+            api_paths = []
+            for split_at in range(1, min(len(refs), 4) + 1):
+                ref = quote("/".join(refs[:split_at]), safe="")
+                path = quote("/".join(refs[split_at:]))
+                if path:
+                    api_paths.append(f"{repo}/contents/{path}?ref={ref}")
+                elif parts[2] == "tree":
+                    api_paths.append(f"{repo}/contents?ref={ref}")
+    statuses = [github_api_status(path) for path in api_paths]
+    if 200 in statuses:
+        return "reachable", 200, ""
+    if all(status == 404 for status in statuses):
+        return "likely broken", 404, "HTTP 404 via GitHub API; verify before removing"
+    return None
+
+
+def check_url(url: str) -> tuple[str, str, int, str]:
+    """Return URL, outcome, HTTP code and explanation.
+
+    Transient failures are retried with backoff. For github.com, whose web
+    frontend often answers with 5xx under load, the GitHub API decides instead.
+    """
+    for attempt in range(MAX_ATTEMPTS):
+        outcome, code, detail = request_once(url)
+        if not is_transient(outcome, code):
+            return url, outcome, code, detail
+        if api_result := check_github_api(url):
+            return (url, *api_result)
+        if attempt < MAX_ATTEMPTS - 1:
+            time.sleep(RETRY_DELAY * 2**attempt)
+    return url, outcome, code, detail
 
 
 def check_all_links(urls):
