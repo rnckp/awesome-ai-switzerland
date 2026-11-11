@@ -43,6 +43,9 @@ jobs:
           test ! -e _site/RESEARCH.html
           test ! -e _site/RESEARCH.md
           test -s _site/CONTRIBUTING.html
+          test -s _site/HACK_APERTUS.html
+          grep -q 'HACK_APERTUS.html' _site/index.html
+          grep -q 'id="liebefeld-on-site-projects"' _site/HACK_APERTUS.html
           test -s _site/LICENSE
           grep -q 'id="official-models"' _site/index.html
           test ! -d _site/.agent

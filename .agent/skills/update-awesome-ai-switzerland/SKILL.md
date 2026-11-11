@@ -9,8 +9,8 @@ Maintain a comprehensive but concise resource list for the **Swiss AI Apertus mo
 
 ## Repository contract
 
-- Read [README.md](../../../README.md), [CONTRIBUTING.md](../../../CONTRIBUTING.md), and [RESEARCH.md](../../../RESEARCH.md), plus applicable agent instructions and the current Git diff, before editing. Read [src/README.md](../../../src/README.md) and the [Makefile](../../../Makefile) for maintenance commands.
-- `README.md` is the canonical list and the GitHub Pages homepage. Keep short descriptions, grouped model variants, the contents links, and the distinction between official and third-party resources.
+- Read [README.md](../../../README.md), [HACK_APERTUS.md](../../../HACK_APERTUS.md), [CONTRIBUTING.md](../../../CONTRIBUTING.md), and [RESEARCH.md](../../../RESEARCH.md), plus applicable agent instructions and the current Git diff, before editing. Read [src/README.md](../../../src/README.md) and the [Makefile](../../../Makefile) for maintenance commands.
+- `README.md` is the main guide and the GitHub Pages homepage. [HACK_APERTUS.md](../../../HACK_APERTUS.md) holds the full Hack Apertus project list; the homepage retains award recipients and selected notable projects. Add hackathon entries to the full list and keep highlighted descriptions consistent. Keep short descriptions, grouped model variants, the contents links, and the distinction between official and third-party resources.
 - `RESEARCH.md` records the source trail, scope, research date, caveats, and actual verification results. Correct stale observations instead of accumulating contradictory notes.
 - Preserve the CC0 license and unrelated user changes. The Python package contains working maintenance helpers; reuse them rather than writing replacement counters or HTTP crawlers. Change helper code or deployment setup only when the requested work needs it.
 
@@ -54,6 +54,8 @@ For a full refresh, use the reports to establish a baseline, then rerun the affe
 ```sh
 make count-sources ARGS='README.md --output /tmp/swiss-ai-counts.md'
 make check-links ARGS='README.md --output /tmp/swiss-ai-links.md'
+make count-sources ARGS='HACK_APERTUS.md --output /tmp/hack-apertus-counts.md'
+make check-links ARGS='HACK_APERTUS.md --output /tmp/hack-apertus-links.md'
 uv run --locked check-links --help
 ```
 
@@ -72,7 +74,7 @@ The default reports are ignored by Git and excluded from Pages. Summarize releva
 
 1. Add or revise entries in the existing sections, with direct primary-source links and one short statement of purpose. Avoid prices, download counts, duplicate listings, and broad claims of completeness.
 2. Update the contents anchors if headings change. Keep repository-relative document links so the same Markdown works on GitHub and Pages.
-3. Use the link helper for new or changed URLs and inspect destination contents in primary sources. A successful HTTP response alone does not establish relevance. For a full refresh, run it on the entire README and audit supporting documents as appropriate; state exactly which files were checked.
+3. Use the link helper for new or changed URLs and inspect destination contents in primary sources. A successful HTTP response alone does not establish relevance. For a full refresh, run it on both `README.md` and `HACK_APERTUS.md` and audit supporting documents as appropriate; state exactly which files were checked.
 4. Distinguish dead links from rate limits, authentication, and bot protection. Retry transient errors sparingly; use a primary-source cross-check for blocked pages and record unresolved cases. Do not delete an entry solely because it returned 403 or 429.
 5. Validate local file links, contents anchors, table structure, and `git diff --check`. Review counts from the resource helper for unexpected changes, while checking tables separately. Recalculate verification totals when recording a new full check; keep resource-bullet counts distinct from unique URL counts and never reuse historical totals as current results.
 6. Advance the README's “Last full ecosystem review” date and the overall research date only after a substantive ecosystem refresh. For a narrow change, record its date and scope separately, updating the targeted Hack Apertus review date when applicable. State what was actually tested; link checking does not mean software or services were exercised.

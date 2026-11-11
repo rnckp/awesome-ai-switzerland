@@ -38,13 +38,17 @@ make help          # List all targets
   inconclusive checks alone do not cause failure.
 
 Both helpers default to `README.md` in the current working directory, so the
-default reports cover only the main README. The default report paths at the
-repository root are ignored by Git and excluded from Pages. Override the input
+default reports cover only the main README, including its project highlights.
+Pass `HACK_APERTUS.md` explicitly to check or count the full Hack Apertus list.
+The default report paths at the repository root are ignored by Git and excluded
+from Pages. Override the input
 or output to check another document or write elsewhere:
 
 ```sh
 uv run --locked count-sources README.md --output /tmp/counts.md
 uv run --locked check-links README.md --output /tmp/links.md
+uv run --locked count-sources HACK_APERTUS.md --output /tmp/hack-apertus-counts.md
+uv run --locked check-links HACK_APERTUS.md --output /tmp/hack-apertus-links.md
 make check-links ARGS='README.md --output /tmp/links.md'
 ```
 

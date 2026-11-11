@@ -12,6 +12,7 @@ plugins:
 
 include:
   - README.md
+  - HACK_APERTUS.md
   - CONTRIBUTING.md
   - LICENSE
 
