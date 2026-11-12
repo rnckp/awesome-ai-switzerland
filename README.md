@@ -10,7 +10,7 @@ A curated guide to [Apertus](https://www.apertus-ai.org/), the open multilingual
 
 > Independent, community-maintained list; not affiliated with, sponsored by, or endorsed by Apertus or its institutions. “Official” denotes resources from the Apertus team or Swiss AI.
 
-**List audit: October 20, 2026.** Last full ecosystem review: September 26, 2026; targeted additions through November 8.
+**List audit: October 20, 2026.** Last full ecosystem review: September 26, 2026; targeted additions through November 12.
 
 Related Swiss guides: [open data sources and tools](https://github.com/rnckp/awesome-ogd-switzerland) and [legal sources, datasets and tools](https://github.com/rnckp/awesome-open-legal-switzerland).
 
@@ -301,7 +301,7 @@ Selected examples of Swiss legal evaluation, parliamentary data extraction, acce
 
 ## Community and contributing
 
-- [Hack Apertus project catalog](https://github.com/HackApertus/projects) — Organizer-maintained repository links, reports and project metadata. The [project overview](https://hackapertus.ch/projects/overview) is the browsing entry point. Some listed repositories remain unavailable publicly.
+- [Official Hack Apertus project overview](https://hackapertus.ch/projects/overview) — Companion list maintained by the organizers, with project summaries, repository links and reports; [catalog data](https://github.com/HackApertus/projects). Our [curated project list](HACK_APERTUS.md) applies the inclusion requirements; some official submissions lack public reusable code.
 - **Discuss models:** official Hugging Face discussions for [1.5 8B](https://huggingface.co/swiss-ai/Apertus-v1.5-8B/discussions) and [70B](https://huggingface.co/swiss-ai/Apertus-v1.5-70B/discussions).
 - **Contact the team:** [contact page](https://apertus-ai.org/contact/), including showcase requests.
 - **Meet the community:** [Discord](https://discord.gg/t9TY8FsJd), linked in the official ecosystem post; [Swiss AI events](https://www.swiss-ai.org/events) and [Swiss AI Weeks](https://ai-weeks.ch/).
