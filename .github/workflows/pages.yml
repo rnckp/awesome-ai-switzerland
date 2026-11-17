@@ -40,10 +40,17 @@ jobs:
           test -s _site/index.html
           test -s _site/assets/css/style.css
           grep -Fq "href=\"${PAGES_BASE_PATH}/assets/css/style.css" _site/index.html
+          grep -q 'class="section-index"' _site/index.html
+          grep -q 'href="#official-models"' _site/index.html
+          grep -q 'Not affiliated with Apertus' _site/index.html
+          grep -q 'class="table-scroll"' _site/index.html
+          grep -q '\.site-header' _site/assets/css/style.css
           test ! -e _site/RESEARCH.html
           test ! -e _site/RESEARCH.md
           test -s _site/CONTRIBUTING.html
           test -s _site/HACK_APERTUS.html
+          grep -q 'class="site-header shell"' _site/CONTRIBUTING.html
+          grep -q 'class="section-index"' _site/HACK_APERTUS.html
           grep -q 'HACK_APERTUS.html' _site/index.html
           grep -q 'id="liebefeld-on-site-projects"' _site/HACK_APERTUS.html
           test -s _site/LICENSE
