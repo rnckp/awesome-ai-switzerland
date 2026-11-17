@@ -43,10 +43,10 @@ main { min-width: 0; }
 .resource-content blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 2px solid var(--accent); color: var(--muted); font-size: .9rem; }
 .resource-content blockquote p { margin: 0; }
 .resource-content ul, .resource-content ol { padding-left: 1.2rem; }
-.resource-content li { padding-left: .2rem; margin-block: .75rem; }
+.resource-content li { padding-left: .2rem; margin-block: .25rem; line-height: 1.5; }
 .resource-content li > a:first-child { font-weight: 600; }
-.resource-content li > p { margin-block: .5rem; }
-.resource-content li ul { margin-top: .5rem; }
+.resource-content li > p { margin-block: .25rem; }
+.resource-content li ul { margin-top: .25rem; }
 .resource-content details { margin-block: 1.5rem; padding: .75rem 1rem; border: 1px solid var(--line); font-size: .9rem; }
 .resource-content summary { cursor: pointer; }
 .resource-content > details:first-of-type { display: none; }
